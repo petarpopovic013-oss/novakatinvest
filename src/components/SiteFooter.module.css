@@ -1,0 +1,297 @@
+.footer {
+  margin-top: 10px;
+  padding: clamp(28px, 4vw, 58px);
+  overflow: hidden;
+  color: #fff;
+  border-radius: 6px;
+  background: #222;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+  gap: clamp(52px, 9vw, 140px);
+  padding-bottom: clamp(48px, 6vw, 82px);
+  border-bottom: 1px solid #444440;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: #9c9c97;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cta h2 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 5.8vw, 82px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.ctaAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.ctaAside p {
+  max-width: 430px;
+  margin: 0 0 26px;
+  color: #aaa9a5;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.ctaButton {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  color: #191919;
+  font-size: 13px;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.ctaButton:hover,
+.ctaButton:focus-visible {
+  background: transparent;
+  color: #fff;
+}
+
+.ctaButton svg,
+.linkGroups nav svg {
+  width: 14px;
+  height: 14px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(64px, 10vw, 160px);
+  padding: clamp(48px, 6vw, 78px) 0;
+}
+
+.brandBlock {
+  max-width: 410px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand img {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  object-fit: contain;
+}
+
+.brand > span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.brand strong {
+  color: #969691;
+  font-weight: 450;
+}
+
+.brandBlock > p {
+  max-width: 370px;
+  margin: 25px 0 0;
+  color: #8f8f8b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.linkGroups {
+  display: grid;
+  grid-template-columns: 0.7fr 1.1fr 1.25fr;
+  gap: clamp(28px, 4vw, 68px);
+}
+
+.linkGroups h3 {
+  margin: 0 0 22px;
+  color: #777773;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.linkGroups nav > a {
+  display: flex;
+  width: 100%;
+  min-height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #b6b6b2;
+  border-bottom: 1px solid #393936;
+  font-size: 12px;
+  line-height: 1.35;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+
+.linkGroups nav > a:hover,
+.linkGroups nav > a:focus-visible {
+  color: #fff;
+  border-color: #74746f;
+}
+
+.linkGroups nav svg {
+  flex: 0 0 14px;
+}
+
+.contact {
+  min-width: 0;
+}
+
+.contact > div {
+  padding: 0 0 15px;
+  border-bottom: 1px solid #393936;
+}
+
+.contact > div + div {
+  padding-top: 15px;
+}
+
+.contact span {
+  display: block;
+  margin-bottom: 6px;
+  color: #777773;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact a {
+  display: inline-block;
+  max-width: 100%;
+  color: #d1d1cd;
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  transition: color 180ms ease;
+}
+
+.contact a:hover,
+.contact a:focus-visible {
+  color: #fff;
+}
+
+.legal {
+  display: flex;
+  padding-top: 17px;
+  justify-content: space-between;
+  gap: 24px;
+  color: #747470;
+  border-top: 1px solid #444440;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .cta,
+  .main {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .ctaAside p {
+    max-width: 560px;
+  }
+
+  .brandBlock {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    padding: 34px 22px 18px;
+  }
+
+  .cta {
+    gap: 30px;
+    padding-bottom: 45px;
+  }
+
+  .cta h2 {
+    font-size: clamp(44px, 14vw, 64px);
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+
+  .main {
+    gap: 44px;
+    padding: 46px 0 50px;
+  }
+
+  .linkGroups {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 24px;
+  }
+
+  .contact {
+    grid-column: 1 / -1;
+  }
+
+  .legal {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .linkGroups {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .brand img {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+
+  .brand > span {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaButton,
+  .linkGroups nav > a,
+  .contact a {
+    transition: none;
+  }
+}

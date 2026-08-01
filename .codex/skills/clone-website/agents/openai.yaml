@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clone Website"
+  short_description: "Rebuild websites with pixel-accurate visual QA"
+  default_prompt: "Use $clone-website to rebuild the provided website in this project with responsive, pixel-accurate visual QA."

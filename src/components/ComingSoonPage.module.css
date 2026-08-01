@@ -1,0 +1,128 @@
+.page {
+  min-height: 70vh;
+}
+
+.panel {
+  display: flex;
+  min-height: clamp(560px, calc(100svh - 112px), 780px);
+  padding: clamp(24px, 3.5vw, 52px);
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: #242424;
+  color: var(--white);
+}
+
+.topline,
+.bottomline {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  color: #8f8f8a;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topline {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #42423f;
+}
+
+.content {
+  width: min(100%, 980px);
+  margin: auto;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #aaa9a4;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  margin: 0;
+  font-size: clamp(58px, 9vw, 132px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+.content p {
+  margin: 26px 0 34px;
+  color: #aaa9a4;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+}
+
+.content a {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid var(--white);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--foreground);
+  font-size: 13px;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.content a:hover,
+.content a:focus-visible {
+  background: transparent;
+  color: var(--white);
+}
+
+.bottomline {
+  padding-top: 18px;
+  border-top: 1px solid #42423f;
+}
+
+@media (max-width: 600px) {
+  .panel {
+    min-height: 600px;
+    padding: 22px;
+  }
+
+  .content {
+    padding: 56px 0;
+  }
+
+  .content h1 {
+    font-size: clamp(54px, 19vw, 82px);
+  }
+
+  .content a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .panel {
+    min-height: 570px;
+    padding: 18px;
+  }
+
+  .topline,
+  .bottomline {
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  .content h1 {
+    font-size: clamp(48px, 17vw, 62px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content a {
+    transition: none;
+  }
+}
