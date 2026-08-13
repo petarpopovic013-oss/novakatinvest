@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "../../src/components/ComingSoonPage";
+import { ReferencesIndex } from "../../src/components/References";
 
 export const metadata: Metadata = {
   title: "Reference",
-  description: "Stranica Reference biće uskoro dostupna.",
+  description:
+    "Istražite završene projekte Novak Invest — Gundulićeva 33 i Atrium Residence u Novom Sadu.",
 };
 
 export default function ReferencesPage() {
-  return <ComingSoonPage title="Reference" />;
+  return <ReferencesIndex />;
 }

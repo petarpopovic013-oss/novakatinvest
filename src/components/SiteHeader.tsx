@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { navigation } from "../data/site";
+import { navigation, referenceProjects } from "../data/site";
 import { ArrowRightIcon } from "./icons";
 import styles from "./SiteHeader.module.css";
 
@@ -52,6 +52,44 @@ export function SiteHeader() {
         <nav className={styles.desktopNav} aria-label="Glavna navigacija">
           {navigation.map((item) => {
             const active = isRouteActive(pathname, item.href);
+
+            if (item.href === "/reference") {
+              return (
+                <div className={styles.referenceNavItem} key={item.href}>
+                  <Link
+                    className={active ? styles.activeLink : undefined}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    aria-haspopup="true"
+                  >
+                    {item.label}
+                  </Link>
+                  <div className={styles.referenceMega}>
+                    <div className={styles.referenceMegaHead}>
+                      <span>Završeni projekti</span>
+                      <Link href="/reference">Sve reference</Link>
+                    </div>
+                    <div className={styles.referenceMegaGrid}>
+                      {referenceProjects.map((project) => (
+                        <Link
+                          className={styles.referencePreview}
+                          href={`/reference/${project.slug}`}
+                          key={project.slug}
+                        >
+                          <span className={styles.referencePreviewImage}>
+                            <Image src={project.hero.src} alt="" fill sizes="290px" />
+                          </span>
+                          <span className={styles.referencePreviewCopy}>
+                            <strong>{project.name}</strong>
+                            <small>{project.location.address} · {project.location.city}</small>
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <Link

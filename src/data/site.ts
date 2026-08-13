@@ -121,19 +121,19 @@ export const projects: Project[] = [
     status: "completed",
     statusLabel: "Referenca",
     featured: false,
-    location: { address: "Petefi Šandora", city: "Novi Sad" },
+    location: { address: "Petefi Šandora 19–23", city: "Novi Sad" },
     shortDescription:
       "Stambeno-poslovni kompleks na Telepu, projektovan oko ideje funkcionalnog i mirnog gradskog doma.",
     description: [
       "Atrium Residence objedinjuje stanovanje, poslovne sadržaje, parking i uređene zajedničke površine.",
     ],
     hero: {
-      src: "/images/novak/atrium-hero.jpg",
-      alt: "Render kompleksa Atrium Residence na Telepu",
+      src: "/reference-media/atrium-residence/01.webp",
+      alt: "Atrium Residence i centralno dvorište iz vazduha",
     },
     gallery: [
-      { src: "/images/novak/atrium-street.jpg", alt: "Ulični pogled na Atrium Residence" },
-      { src: "/images/novak/atrium-night.jpg", alt: "Noćni render Atrium Residence" },
+      { src: "/reference-media/atrium-residence/03.webp", alt: "Kompleks Atrium Residence na Telepu" },
+      { src: "/reference-media/atrium-residence/05.webp", alt: "Atrium Residence u urbanom okruženju Telepa" },
     ],
     facts: [
       { label: "Stambene jedinice", value: "194" },
@@ -159,10 +159,13 @@ export const projects: Project[] = [
       "Objekat je projektovan sa 23 stambene jedinice različitih struktura i poslovnim prostorom u prizemlju i podrumu.",
     ],
     hero: {
-      src: "/images/novak/gunduliceva-33.jpg",
-      alt: "Noćni render objekta Gundulićeva 33 u Novom Sadu",
+      src: "/reference-media/gunduliceva-33/02.webp",
+      alt: "Završeni objekat Gundulićeva 33 iz vazduha",
     },
-    gallery: [],
+    gallery: [
+      { src: "/reference-media/gunduliceva-33/01.webp", alt: "Bočni pogled na objekat Gundulićeva 33" },
+      { src: "/reference-media/gunduliceva-33/04.webp", alt: "Prednja fasada objekta Gundulićeva 33" },
+    ],
     facts: [
       { label: "Stanovi", value: "23" },
       { label: "Raspon kvadratura", value: "26,64–125,05 m²" },

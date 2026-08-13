@@ -2,9 +2,6 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 const assets = [
   ["atrium-hero.jpg", "https://novakinvest.rs/wp-content/uploads/2023/04/0_slika-6-scaled.jpg"],
-  ["atrium-street.jpg", "https://novakinvest.rs/wp-content/uploads/2023/04/0_slika-2-2-scaled.jpg"],
-  ["atrium-night.jpg", "https://novakinvest.rs/wp-content/uploads/2023/04/0_nocna-slika-1-1-scaled.jpg"],
-  ["gunduliceva-33.jpg", "https://novakinvest.rs/wp-content/uploads/2022/12/oprojektu.jpg"],
   ["sremska-kamenica.webp", "https://novakinvest.rs/wp-content/uploads/2025/06/Vile-Kamenica-Projekat.webp"],
   ["petrovaradin.webp", "https://novakinvest.rs/wp-content/uploads/2025/06/Pozadina-za-karticu-projekti-scaled.webp"],
   ["temerinska-141.webp", "https://novakinvest.rs/wp-content/uploads/2025/11/Temerinska-141-PROJEKAT-scaled.webp"],
