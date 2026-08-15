@@ -4,6 +4,10 @@
   background: var(--paper);
 }
 
+.page :where(h1, h2, h3, p, dd, a, span) {
+  overflow-wrap: anywhere;
+}
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -33,6 +37,15 @@
   gap: clamp(40px, 8vw, 128px);
   align-items: end;
   margin-top: clamp(60px, 10vw, 140px);
+}
+
+.indexIntroGrid > *,
+.indexStatement > *,
+.overviewHeading,
+.leadCopy,
+.sectionHeader > *,
+.featureCopy {
+  min-width: 0;
 }
 
 .indexIntro h1 {
@@ -216,6 +229,7 @@
   right: clamp(24px, 5vw, 72px);
   bottom: clamp(32px, 6vw, 88px);
   left: clamp(24px, 5vw, 72px);
+  min-width: 0;
 }
 
 .breadcrumbsLight {
@@ -536,7 +550,9 @@
   }
 
   .indexIntro h1 {
-    font-size: clamp(48px, 16vw, 74px);
+    font-size: clamp(42px, 14vw, 68px);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
   }
 
   .cards {
@@ -567,7 +583,9 @@
   }
 
   .heroContent h1 {
-    font-size: clamp(55px, 18vw, 84px);
+    font-size: clamp(42px, 14vw, 68px);
+    line-height: 0.96;
+    letter-spacing: -0.055em;
   }
 
   .heroContent > p {
@@ -636,6 +654,91 @@
 }
 
 @media (max-width: 520px) {
+  .breadcrumbs {
+    column-gap: 6px;
+    line-height: 1.45;
+  }
+
+  .indexIntro {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .indexIntroGrid {
+    margin-top: 52px;
+  }
+
+  .cardBody {
+    padding: 22px 18px 24px;
+  }
+
+  .cardBody h2 {
+    font-size: clamp(32px, 10.5vw, 44px);
+  }
+
+  .indexStatement {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .indexStatement p,
+  .overviewHeading h2,
+  .sectionHeader h2 {
+    font-size: clamp(32px, 10.5vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+  }
+
+  .detailHero {
+    min-height: max(600px, calc(100svh - 82px));
+  }
+
+  .heroContent {
+    right: 16px;
+    bottom: 24px;
+    left: 16px;
+  }
+
+  .breadcrumbsLight {
+    margin-bottom: 42px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(40px, 13.5vw, 58px);
+  }
+
+  .heroContent > p {
+    margin-top: 22px;
+  }
+
+  .introduction,
+  .story {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .featureTextOnly,
+  .featureTextOnly.featureRowReverse {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .featureBody {
+    padding: 24px 18px 28px;
+  }
+
+  .featureBody h3 {
+    margin-top: 30px;
+    font-size: clamp(28px, 9vw, 36px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .featureCopy p,
+  .leadCopy p,
+  .sectionHeader > p {
+    font-size: 15px;
+  }
+
   .facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -657,6 +760,22 @@
 
   .facts dd {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroContent h1 {
+    font-size: 40px;
+  }
+
+  .heroEyebrow,
+  .heroLocation {
+    font-size: 10px;
+  }
+
+  .featureBody {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 }
 
