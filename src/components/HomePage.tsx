@@ -66,8 +66,8 @@ export function HomePage() {
       <section className={styles.hero} aria-labelledby="home-heading">
         <Image
           className={styles.heroImage}
-          src="/images/novak/temerinska-143/building-hero.webp"
-          alt="Savremeni stambeno-poslovni objekat Temerinska 143"
+          src="/reference-media/atrium-residence/01.webp"
+          alt="Atrium Residence kompleks"
           fill
           sizes="(max-width: 767px) calc(100vw - 24px), min(1576px, calc(100vw - 48px))"
           preload

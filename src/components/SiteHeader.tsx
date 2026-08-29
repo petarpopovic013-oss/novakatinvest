@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { navigation, referenceProjects } from "../data/site";
+import { navigation, offerProjects, referenceProjects } from "../data/site";
 import { ArrowRightIcon } from "./icons";
 import styles from "./SiteHeader.module.css";
 
@@ -53,7 +53,12 @@ export function SiteHeader() {
           {navigation.map((item) => {
             const active = isRouteActive(pathname, item.href);
 
-            if (item.href === "/reference") {
+            if (item.href === "/ponuda" || item.href === "/reference") {
+              const isOffer = item.href === "/ponuda";
+              const projects = isOffer ? offerProjects : referenceProjects;
+              const sectionLabel = isOffer ? "Aktuelna ponuda" : "Završeni projekti";
+              const allLabel = isOffer ? "Cela ponuda" : "Sve reference";
+
               return (
                 <div className={styles.referenceNavItem} key={item.href}>
                   <Link
@@ -64,16 +69,24 @@ export function SiteHeader() {
                   >
                     {item.label}
                   </Link>
-                  <div className={styles.referenceMega}>
+                  <div
+                    className={`${styles.referenceMega} ${
+                      isOffer ? styles.offerMega : ""
+                    }`}
+                  >
                     <div className={styles.referenceMegaHead}>
-                      <span>Završeni projekti</span>
-                      <Link href="/reference">Sve reference</Link>
+                      <span>{sectionLabel}</span>
+                      <Link href={item.href}>{allLabel}</Link>
                     </div>
-                    <div className={styles.referenceMegaGrid}>
-                      {referenceProjects.map((project) => (
+                    <div
+                      className={`${styles.referenceMegaGrid} ${
+                        isOffer ? styles.offerMegaGrid : ""
+                      }`}
+                    >
+                      {projects.map((project) => (
                         <Link
                           className={styles.referencePreview}
-                          href={`/reference/${project.slug}`}
+                          href={`${item.href}/${project.slug}`}
                           key={project.slug}
                         >
                           <span className={styles.referencePreviewImage}>
