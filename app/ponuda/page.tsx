@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "../../src/components/ComingSoonPage";
+import { OfferIndex } from "../../src/components/OfferPages";
+import { offerProjects } from "../../src/data/site";
 
 export const metadata: Metadata = {
-  title: "Ponuda",
-  description: "Stranica Ponuda biće uskoro dostupna.",
+  title: "Ponuda stanova",
+  description:
+    "Aktuelna ponuda stanova Novak AT Invest na lokaciji Temerinska 143 u Novom Sadu.",
+  alternates: { canonical: "/ponuda" },
+  openGraph: {
+    title: "Ponuda stanova | Novak AT Invest",
+    description: "Istražite projekat i dostupne stanove na Temerinskoj 143.",
+    url: "/ponuda",
+    images: ["/images/novak/temerinska-143/building-hero.webp"],
+  },
 };
 
 export default function OfferPage() {
-  return <ComingSoonPage title="Ponuda" />;
+  return <OfferIndex projects={offerProjects} />;
 }

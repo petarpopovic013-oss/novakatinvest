@@ -48,6 +48,7 @@ export type Unit = {
   terrace?: string;
   bathrooms?: number;
   features?: string[];
+  visual: MediaAsset;
   floorPlan?: MediaAsset;
   positionPlan?: MediaAsset;
   verification: "draft" | "verified";

@@ -66,8 +66,8 @@ export function HomePage() {
       <section className={styles.hero} aria-labelledby="home-heading">
         <Image
           className={styles.heroImage}
-          src="/images/novak/atrium-hero.jpg"
-          alt="Savremena stambena arhitektura koju gradi Novak Invest"
+          src="/images/novak/temerinska-143/building-hero.webp"
+          alt="Savremeni stambeno-poslovni objekat Temerinska 143"
           fill
           sizes="(max-width: 767px) calc(100vw - 24px), min(1576px, calc(100vw - 48px))"
           preload
@@ -76,7 +76,7 @@ export function HomePage() {
 
         <div className={styles.heroContent}>
           <div className={styles.heroMeta}>
-            <span>Novak Invest</span>
+            <span>Temerinska 143</span>
             <span aria-hidden="true">/</span>
             <span>Novi Sad</span>
           </div>

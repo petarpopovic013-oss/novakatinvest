@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Novak Invest | Stanovi i projekti u Novom Sadu",
     description:
       "Istražite Novak Invest projekte, aktuelnu ponudu i reference u Novom Sadu i okolini.",
-    images: ["/images/novak/atrium-hero.jpg"],
+    images: ["/images/novak/temerinska-143/building-hero.webp"],
   },
 };
 
