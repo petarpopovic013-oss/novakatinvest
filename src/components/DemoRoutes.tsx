@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { siteSettings } from "../data/site";
 import type { Project, Unit, UnitStatus } from "../types/site";
+import { ArrowRightIcon } from "./icons";
 import styles from "./DemoRoutes.module.css";
 
 type BreadcrumbItem = {
@@ -137,6 +138,7 @@ export function ProjectCard({ project, kind }: { project: Project; kind: "offer"
         <p>{project.shortDescription}</p>
         <Link className={styles.cardLink} href={href}>
           {kind === "offer" ? "Pogledajte projekat" : "Pogledajte referencu"}
+          <ArrowRightIcon />
         </Link>
       </div>
     </article>

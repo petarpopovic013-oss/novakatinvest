@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ArrowUpRightIcon } from "./icons";
 import styles from "./ComingSoonPage.module.css";
 
 export function ComingSoonPage({ title }: { title: string }) {
@@ -16,7 +17,7 @@ export function ComingSoonPage({ title }: { title: string }) {
           <h1 id="page-title">{title}</h1>
           <p>Stranica će tek biti dodata.</p>
           <Link href="/">
-            Nazad na početnu <span aria-hidden="true">↗</span>
+            Nazad na početnu <ArrowUpRightIcon />
           </Link>
         </div>
 

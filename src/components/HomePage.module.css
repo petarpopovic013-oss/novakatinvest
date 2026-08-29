@@ -127,6 +127,15 @@
   color: var(--foreground);
 }
 
+.primaryButton svg,
+.lightButton svg,
+.textLink svg,
+.referenceMeta a svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
 .heroHighlights {
   display: flex;
   flex-wrap: wrap;

@@ -347,12 +347,15 @@
   font-weight: 600;
 }
 
-.cardLink::after {
-  content: "→";
+.cardLink svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
   transition: transform 180ms ease;
 }
 
-.cardLink:hover::after {
+.cardLink:hover svg,
+.cardLink:focus-visible svg {
   transform: translateX(4px);
 }
 

@@ -6,6 +6,7 @@ import {
   referenceProjects,
   siteSettings,
 } from "../data/site";
+import { ArrowUpRightIcon } from "./icons";
 import styles from "./HomePage.module.css";
 
 const values = [
@@ -56,10 +57,6 @@ const standards = [
   },
 ] as const;
 
-function Arrow() {
-  return <span aria-hidden="true">↗</span>;
-}
-
 export function HomePage() {
   return (
     <>
@@ -87,7 +84,7 @@ export function HomePage() {
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryButton} href="/ponuda">
-              Pogledajte ponudu <Arrow />
+              Pogledajte ponudu <ArrowUpRightIcon />
             </Link>
             <Link className={styles.secondaryButton} href="/o-nama">
               Upoznajte Novak Invest
@@ -157,7 +154,7 @@ export function HomePage() {
                   className={styles.textLink}
                   href={`/ponuda/${project.slug}`}
                 >
-                  Pogledajte projekat <Arrow />
+                  Pogledajte projekat <ArrowUpRightIcon />
                 </Link>
               </div>
             </article>
@@ -240,7 +237,7 @@ export function HomePage() {
               pristupa savremenom, funkcionalnom stanovanju.
             </p>
             <Link className={styles.textLink} href="/reference">
-              Pogledajte sve reference <Arrow />
+              Pogledajte sve reference <ArrowUpRightIcon />
             </Link>
           </div>
         </div>
@@ -273,7 +270,7 @@ export function HomePage() {
                   href={`/reference/${project.slug}`}
                   aria-label={`Otvorite referencu ${project.name}`}
                 >
-                  <Arrow />
+                  <ArrowUpRightIcon />
                 </Link>
               </div>
             </article>
@@ -301,7 +298,7 @@ export function HomePage() {
             <strong>{siteSettings.email}</strong>
           </a>
           <Link className={styles.lightButton} href="/kontakt">
-            Kontaktirajte prodaju <Arrow />
+            Kontaktirajte prodaju <ArrowUpRightIcon />
           </Link>
         </div>
       </section>
