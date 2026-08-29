@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { siteSettings } from "../data/site";
 import type { Project, Unit } from "../types/site";
-import { ArrowRightIcon } from "./icons";
+import { ArrowRightIcon, DownloadIcon } from "./icons";
 import styles from "./OfferPages.module.css";
 
 const structureOrder = ["Dvosoban", "Trosoban"] as const;
@@ -432,6 +432,33 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
               <span>Pozicija na etaži</span>
               <strong>Otvorite prikaz <ArrowRightIcon /></strong>
             </a>
+          </div>
+        </section>
+      ) : null}
+
+      {unit.commercialSketchPdf ? (
+        <section className={styles.sketchDownloadSection}>
+          <div className={styles.sketchDownloadCard}>
+            <div className={styles.sketchDownloadCopy}>
+              <span className={styles.sectionEyebrow}>Dokumentacija</span>
+              <h2>Komercijalna skica stana</h2>
+              <p>
+                Zvanični PDF dokument sa kompletnim tlocrtom, specifikacijom i
+                tabelom površina prostorija za {unit.label}.
+              </p>
+            </div>
+            <div className={styles.sketchDownloadAction}>
+              <a
+                className={styles.downloadSketchButton}
+                href={unit.commercialSketchPdf}
+                download
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>PREUZMI KOMERCIJALNU SKICU STANA</span>
+                <DownloadIcon />
+              </a>
+            </div>
           </div>
         </section>
       ) : null}

@@ -153,6 +153,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-2-position-transparent-v5.webp",
       alt: "Pozicija stana 2 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-2.pdf",
     verification: "draft",
   },
   {
@@ -178,6 +179,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-6-position-transparent-v5.webp",
       alt: "Pozicija stana 6 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-6.pdf",
     verification: "draft",
   },
   {
@@ -203,6 +205,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-8-position-transparent-v5.webp",
       alt: "Pozicija stana 8 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-8.pdf",
     verification: "draft",
   },
   {
@@ -228,6 +231,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-18-position-transparent-v5.webp",
       alt: "Pozicija stana 18 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-18.pdf",
     verification: "draft",
   },
   {
@@ -242,7 +246,7 @@ export const units: Unit[] = [
     terrace: "Dve terase",
     bathrooms: 2,
     visual: {
-      src: "/images/novak/temerinska-143/stan-19-3d-transparent-v5.webp",
+      src: "/images/novak/temerinska-143/stan-19-3d-transparent-v6.webp",
       alt: "Trodimenzionalni prikaz stana 19 u Temerinskoj 143",
     },
     floorPlan: {
@@ -253,6 +257,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-19-position-transparent-v5.webp",
       alt: "Pozicija stana 19 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-19.pdf",
     verification: "draft",
   },
   {
@@ -267,7 +272,7 @@ export const units: Unit[] = [
     terrace: "Dve terase",
     bathrooms: 1,
     visual: {
-      src: "/images/novak/temerinska-143/stan-20-3d-transparent-v5.webp",
+      src: "/images/novak/temerinska-143/stan-20-3d-transparent-v6.webp",
       alt: "Trodimenzionalni prikaz stana 20 u Temerinskoj 143",
     },
     floorPlan: {
@@ -278,6 +283,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-20-position-transparent-v5.webp",
       alt: "Pozicija stana 20 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-20.pdf",
     verification: "draft",
   },
   {
@@ -303,6 +309,7 @@ export const units: Unit[] = [
       src: "/images/novak/temerinska-143/stan-21-position-transparent-v5.webp",
       alt: "Pozicija stana 21 na etaži projekta Temerinska 143",
     },
+    commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-21.pdf",
     verification: "draft",
   },
 ];

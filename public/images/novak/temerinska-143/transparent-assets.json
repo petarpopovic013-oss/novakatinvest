@@ -60,9 +60,9 @@
     "mode": "checker-plan"
   },
   {
-    "source": "stan-19-3d-v2.webp",
-    "output": "stan-19-3d-transparent-v5.webp",
-    "mode": "alpha"
+    "source": "../../../../Stan 19/ST 19 (2).png",
+    "output": "stan-19-3d-transparent-v6.webp",
+    "mode": "pattern-3d"
   },
   {
     "source": "stan-19-floor.webp",
@@ -75,9 +75,9 @@
     "mode": "solid-plan"
   },
   {
-    "source": "stan-20-3d-v2.webp",
-    "output": "stan-20-3d-transparent-v5.webp",
-    "mode": "alpha"
+    "source": "../../../../Stan 20/ST 20 (1).png",
+    "output": "stan-20-3d-transparent-v6.webp",
+    "mode": "pattern-3d"
   },
   {
     "source": "stan-20-floor.webp",

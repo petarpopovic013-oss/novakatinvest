@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 
 import { projects, units } from "../src/data/site";
 
+export const dynamic = "force-static";
+
 const baseUrl = "https://novakinvest.rs";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -25,8 +25,8 @@ Za svaki od sedam stanova postoje tri aktivne transparentne WebP slike:
 | 6 | `stan-6-3d-transparent-v5.webp` | `stan-6-floor-transparent-v5.webp` | `stan-6-position-transparent-v5.webp` |
 | 8 | `stan-8-3d-transparent-v5.webp` | `stan-8-floor-transparent-v5.webp` | `stan-8-position-transparent-v5.webp` |
 | 18 | `stan-18-3d-transparent-v5.webp` | `stan-18-floor-transparent-v5.webp` | `stan-18-position-transparent-v5.webp` |
-| 19 | `stan-19-3d-transparent-v5.webp` | `stan-19-floor-transparent-v5.webp` | `stan-19-position-transparent-v5.webp` |
-| 20 | `stan-20-3d-transparent-v5.webp` | `stan-20-floor-transparent-v5.webp` | `stan-20-position-transparent-v5.webp` |
+| 19 | `stan-19-3d-transparent-v6.webp` | `stan-19-floor-transparent-v5.webp` | `stan-19-position-transparent-v5.webp` |
+| 20 | `stan-20-3d-transparent-v6.webp` | `stan-20-floor-transparent-v5.webp` | `stan-20-position-transparent-v5.webp` |
 | 21 | `stan-21-3d-transparent-v5.webp` | `stan-21-floor-transparent-v5.webp` | `stan-21-position-transparent-v5.webp` |
 
 Sve se nalaze u `public/images/novak/temerinska-143/`. Provereno je da svih 21 fajl ima pravi alpha kanal sa vrednostima od 0 do 255.
@@ -41,32 +41,19 @@ node scripts/make-offer-assets-transparent.mjs
 
 Stari fajlovi sa nazivima `cream-v3` i `cream-v4` nisu aktivni i ne treba ih ponovo povezivati.
 
-## Dve slike koje treba zameniti
+## Zamena rendera za stanove 19 i 20 (Završeno)
 
-Čekaju se još dve ispravne slike od klijenta. Trenutni 3D renderi stanova 19 i 20 su binarno identični, jer je takav materijal bio dostavljen. Njihov SHA-256 je isti:
+Dostavljeni su novi originalni renderi u folderima `Stan 19` i `Stan 20`:
+- `Stan 19/ST 19 (2).png` -> generisan `stan-19-3d-transparent-v6.webp`
+- `Stan 20/ST 20 (1).png` -> generisan `stan-20-3d-transparent-v6.webp`
 
-```text
-5036e8eece32fc4d8d869063b47f2896f6ede14c13501a065270ff13227119ae
-```
-
-Zato su stanovi 19 i 20 najverovatniji kandidati za zamenu, ali pri prijemu novih slika treba potvrditi kom stanu pripada svaki fajl.
-
-## Postupak kada stignu nove slike
-
-1. Sačuvati originalne fajlove koje klijent pošalje, bez prepisivanja postojećeg izvornog materijala.
-2. Potvrditi vezu između slike i broja stana.
-3. Ukloniti samo pozadinu; ne menjati perspektivu, raspored, nameštaj, boje ili proporcije rendera.
-4. Izvesti lossless WebP sa pravim alpha kanalom i novom verzijom naziva, na primer `stan-19-3d-transparent-v6.webp`. Nova verzija sprečava da pregledač prikaže staru sliku iz keša.
-5. U `src/data/site.ts` promeniti samo odgovarajući `visual.src`.
-6. Proveriti sliku na kontrastnoj i na CSS krem pozadini, posebno bele zidove i tanke ivice.
-7. Pokrenuti završne provere:
-
-```bash
-npm run lint
-npx tsc --noEmit
-npm run build
-```
+Obe slike su uspešno obrađene sa uklanjanjem pozadine uz očuvanje svih unutrašnjih zidova, nameštaja i finih linija, i povezane u `src/data/site.ts`.
 
 ## Poslednja verifikacija
 
-Na dan ovog zapisa uspešno su prošli ESLint, TypeScript provera i produkcijski Next.js build. Statički su generisane stranica ponude, stranica projekta i svih sedam stranica stanova.
+Sve provere su uspešno prošle:
+- `npm run lint`
+- `npx tsc --noEmit`
+- `npm run build`
+
+Statički su generisane stranica ponude, stranica projekta i svih sedam stranica stanova.

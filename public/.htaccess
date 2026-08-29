@@ -1,0 +1,28 @@
+# Novak Invest - cPanel / Apache Configuration
+
+RewriteEngine On
+
+# 301 Redirect for legacy URL
+RewriteRule ^ponuda/temerinska-141/?$ /ponuda/temerinska-143/ [R=301,L]
+
+# Custom 404 Error Document
+ErrorDocument 404 /_not-found/index.html
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json application/pdf image/svg+xml
+</IfModule>
+
+# Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

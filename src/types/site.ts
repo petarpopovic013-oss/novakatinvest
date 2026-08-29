@@ -51,6 +51,7 @@ export type Unit = {
   visual: MediaAsset;
   floorPlan?: MediaAsset;
   positionPlan?: MediaAsset;
+  commercialSketchPdf?: string;
   verification: "draft" | "verified";
 };
 

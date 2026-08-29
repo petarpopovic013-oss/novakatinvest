@@ -929,6 +929,86 @@
   font-weight: 500;
 }
 
+.sketchDownloadSection {
+  padding: clamp(60px, 8vw, 110px) clamp(16px, 3vw, 40px) 0;
+}
+
+.sketchDownloadCard {
+  display: flex;
+  min-width: 0;
+  padding: clamp(28px, 4.5vw, 56px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ebeae6;
+}
+
+.sketchDownloadCopy {
+  max-width: 620px;
+}
+
+.sketchDownloadCopy h2 {
+  margin: 12px 0 0;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.sketchDownloadCopy p {
+  max-width: 520px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sketchDownloadAction {
+  flex-shrink: 0;
+}
+
+.downloadSketchButton {
+  display: inline-flex;
+  min-height: 52px;
+  padding: 0 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid var(--charcoal);
+  border-radius: 3px;
+  background: var(--charcoal);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  white-space: nowrap;
+}
+
+.downloadSketchButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 180ms ease;
+}
+
+.downloadSketchButton:hover,
+.downloadSketchButton:focus-visible {
+  background: transparent;
+  color: var(--foreground);
+  transform: translateY(-1px);
+}
+
+.downloadSketchButton:hover svg,
+.downloadSketchButton:focus-visible svg {
+  transform: translateY(2px);
+}
+
 .mobileSalesBar {
   display: none;
 }
@@ -1163,6 +1243,28 @@
     padding: 44px 22px;
   }
 
+  .sketchDownloadSection {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .sketchDownloadCard {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 34px 22px;
+    gap: 24px;
+  }
+
+  .sketchDownloadAction {
+    width: 100%;
+  }
+
+  .downloadSketchButton {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
   .contactActions > * {
     width: 100%;
   }
@@ -1275,9 +1377,15 @@
   .overview,
   .unitsSection,
   .unitOverview,
-  .plansSection {
+  .plansSection,
+  .sketchDownloadSection {
     padding-right: 12px;
     padding-left: 12px;
+  }
+
+  .sketchDownloadCard {
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
   .unitVisual > .availability {
@@ -1305,7 +1413,9 @@
   .unitArrow,
   .contactActions svg,
   .heroFooter svg,
-  .planGrid strong svg {
+  .planGrid strong svg,
+  .downloadSketchButton,
+  .downloadSketchButton svg {
     transition: none;
   }
 }
