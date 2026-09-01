@@ -6,7 +6,26 @@ import type { Project, Unit } from "../types/site";
 import { ArrowRightIcon, DownloadIcon } from "./icons";
 import styles from "./OfferPages.module.css";
 
-const structureOrder = ["Dvosoban", "Trosoban"] as const;
+const structures = [
+  {
+    singular: "Dvosoban",
+    plural: "Dvosobni",
+    heading: "Dvosobni stanovi",
+    anchor: "dvosoban",
+  },
+  {
+    singular: "Trosoban",
+    plural: "Trosobni",
+    heading: "Trosobni stanovi",
+    anchor: "trosoban",
+  },
+  {
+    singular: "Četvorosoban",
+    plural: "Četvorosobni",
+    heading: "Četvorosobni stanovi",
+    anchor: "cetvorosoban",
+  },
+] as const;
 
 function formatArea(area: number) {
   return area.toLocaleString("sr-Latn-RS", {
@@ -169,7 +188,7 @@ function UnitCard({ project, unit }: { project: Project; unit: Unit }) {
 
       <div className={styles.unitBody}>
         <div>
-          <span>{unit.floor}</span>
+          <span>{[unit.building, unit.floor].filter(Boolean).join(" · ")}</span>
           <h3>
             <Link href={href}>{unit.label}</Link>
           </h3>
@@ -190,10 +209,10 @@ function UnitCard({ project, unit }: { project: Project; unit: Unit }) {
 }
 
 export function ProjectOffer({ project, units }: { project: Project; units: Unit[] }) {
-  const groupedUnits = structureOrder
+  const groupedUnits = structures
     .map((structure) => ({
-      structure,
-      units: units.filter((unit) => unit.roomType === structure),
+      ...structure,
+      units: units.filter((unit) => unit.roomType === structure.singular),
     }))
     .filter((group) => group.units.length > 0);
 
@@ -218,7 +237,9 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
             ]}
           />
           <span className={styles.heroEyebrow}>{project.statusLabel}</span>
-          <h1>{project.name}</h1>
+          <h1 className={project.name.length > 24 ? styles.compactProjectTitle : undefined}>
+            {project.name}
+          </h1>
           <p>{project.shortDescription}</p>
           <div className={styles.heroFooter}>
             <span>
@@ -265,8 +286,8 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
 
         <nav className={styles.structureNav} aria-label="Strukture stanova">
           {groupedUnits.map((group) => (
-            <a href={`#${group.structure.toLowerCase()}`} key={group.structure}>
-              <span>{group.structure === "Dvosoban" ? "Dvosobni" : "Trosobni"}</span>
+            <a href={`#${group.anchor}`} key={group.singular}>
+              <span>{group.plural}</span>
               <strong>{String(group.units.length).padStart(2, "0")}</strong>
             </a>
           ))}
@@ -275,12 +296,12 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
         {groupedUnits.map((group, index) => (
           <div
             className={styles.unitGroup}
-            id={group.structure.toLowerCase()}
-            key={group.structure}
+            id={group.anchor}
+            key={group.singular}
           >
             <div className={styles.groupHeading}>
               <span>0{index + 1}</span>
-              <h3>{group.structure === "Dvosoban" ? "Dvosobni stanovi" : "Trosobni stanovi"}</h3>
+              <h3>{group.heading}</h3>
               <p>{group.units.length} {group.units.length === 1 ? "stan" : "stana"}</p>
             </div>
             <div className={styles.unitGrid}>
@@ -292,7 +313,12 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
         ))}
       </section>
 
-      <section className={styles.projectGallery} aria-label="Galerija projekta">
+      <section
+        className={`${styles.projectGallery} ${
+          project.gallery.length === 2 ? styles.projectGalleryTwo : ""
+        }`}
+        aria-label="Galerija projekta"
+      >
         {project.gallery.map((image, index) => (
           <figure key={image.src}>
             <Image
@@ -325,8 +351,9 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
 }
 
 export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
-  const details = [
+  const details: Array<[string, string]> = [
     ["Projekat", project.name],
+    ...(unit.building ? [["Lamela", unit.building] as [string, string]] : []),
     ["Jedinica", unit.label],
     ["Sprat", unit.floor],
     ["Struktura", unit.roomType],
@@ -334,6 +361,9 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
     ["Terasa", unit.terrace ?? "-"],
     ["Status", "Dostupan"],
   ];
+  const unitLocation = [project.name, unit.building, unit.floor]
+    .filter(Boolean)
+    .join(" · ");
 
   return (
     <main className={`${styles.page} ${styles.pageWithSalesBar}`}>
@@ -347,9 +377,7 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
             ]}
           />
           <AvailabilityBadge />
-          <p className={styles.unitKicker}>
-            {project.name} · {unit.floor}
-          </p>
+          <p className={styles.unitKicker}>{unitLocation}</p>
           <h1>{unit.label}</h1>
           <div className={styles.areaDisplay}>
             <strong>{formatArea(unit.area)}</strong>

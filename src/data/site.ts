@@ -66,6 +66,57 @@ export const projects: Project[] = [
     verification: "draft",
   },
   {
+    id: "petrovaradin-vladimira-gortana-8c",
+    slug: "petrovaradin-vladimira-gortana-8c",
+    name: "Petrovaradin - Vladimira Gortana 8c",
+    status: "available",
+    statusLabel: "U ponudi",
+    featured: true,
+    location: { address: "Vladimira Gortana 8c", city: "Petrovaradin" },
+    shortDescription:
+      "Savremena stambena zgrada sa dve lamele, liftovima, podzemnom garažom i uređenim zelenim površinama u mirnom delu Petrovaradina.",
+    description: [
+      "Na adresi Vladimira Gortana 8c nastaje slobodnostojeća stambena zgrada sa 53 stana, organizovana kroz lamele A i B, spratnosti Po + P + 1 + Pk (M).",
+      "Aktuelna ponuda obuhvata četiri trosobna i četvorosobna stana, sa detaljnim 3D prikazima, tlocrtima, pozicijama na etaži i komercijalnim skicama.",
+    ],
+    hero: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/building-street.webp",
+      alt: "Ulični pogled na projekat Petrovaradin - Vladimira Gortana 8c",
+    },
+    gallery: [
+      {
+        src: "/images/novak/petrovaradin-vladimira-gortana-8c/building-courtyard.webp",
+        alt: "Dvorišni pogled na projekat Vladimira Gortana 8c u Petrovaradinu",
+      },
+      {
+        src: "/images/novak/petrovaradin-vladimira-gortana-8c/building-street.webp",
+        alt: "Prilaz i ulična fasada projekta Vladimira Gortana 8c",
+      },
+    ],
+    facts: [
+      { label: "Aktuelna ponuda", value: "4 stana" },
+      { label: "Strukture", value: "Trosobni i četvorosobni" },
+      { label: "Spratnost", value: "Po + P + 1 + Pk (M)" },
+      { label: "Lokacija", value: "Petrovaradin" },
+    ],
+    amenities: ["Dve stambene lamele", "Podzemna garaža", "Uređene zelene površine"],
+    constructionStandards: [
+      {
+        title: "Fasadna stolarija",
+        description: "Aluminijumska stolarija sa termoprekidom i niskoemisionim staklom.",
+      },
+      {
+        title: "Podovi",
+        description: "Parket i keramika prilagođeni nameni prostorija.",
+      },
+      {
+        title: "Sigurnost",
+        description: "Protivprovalna ulazna vrata na stambenim jedinicama.",
+      },
+    ],
+    verification: "verified",
+  },
+  {
     id: "atrium-residence",
     slug: "atrium-residence",
     name: "Atrium Residence",
@@ -311,6 +362,118 @@ export const units: Unit[] = [
     },
     commercialSketchPdf: "/documents/temerinska-143/komercijalna-skica-stan-21.pdf",
     verification: "draft",
+  },
+  {
+    id: "petrovaradin-vladimira-gortana-8c-stan-4",
+    slug: "stan-4",
+    projectSlug: "petrovaradin-vladimira-gortana-8c",
+    label: "Stan 4",
+    building: "Lamela A",
+    floor: "Prizemlje",
+    roomType: "Trosoban",
+    area: 61.69,
+    status: "available",
+    terrace: "Lođa 2,02 m²",
+    bathrooms: 1,
+    visual: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-4-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 4 u Lameli A",
+    },
+    floorPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-4-floor.webp",
+      alt: "Tlocrt stana 4 u prizemlju Lamele A",
+    },
+    positionPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-4-position.webp",
+      alt: "Pozicija stana 4 na etaži Lamele A",
+    },
+    commercialSketchPdf:
+      "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-4.pdf",
+    verification: "verified",
+  },
+  {
+    id: "petrovaradin-vladimira-gortana-8c-stan-7",
+    slug: "stan-7",
+    projectSlug: "petrovaradin-vladimira-gortana-8c",
+    label: "Stan 7",
+    building: "Lamela A",
+    floor: "Prizemlje",
+    roomType: "Četvorosoban",
+    area: 91.19,
+    status: "available",
+    terrace: "Terasa 4,33 m²",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-7-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 7 u Lameli A",
+    },
+    floorPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-7-floor.webp",
+      alt: "Tlocrt stana 7 u prizemlju Lamele A",
+    },
+    positionPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-7-position.webp",
+      alt: "Pozicija stana 7 na etaži Lamele A",
+    },
+    commercialSketchPdf:
+      "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-7.pdf",
+    verification: "verified",
+  },
+  {
+    id: "petrovaradin-vladimira-gortana-8c-stan-8",
+    slug: "stan-8",
+    projectSlug: "petrovaradin-vladimira-gortana-8c",
+    label: "Stan 8",
+    building: "Lamela A",
+    floor: "Prizemlje",
+    roomType: "Trosoban",
+    area: 58.98,
+    status: "available",
+    terrace: "Lođa 2,56 m²",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-8-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 8 u Lameli A",
+    },
+    floorPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-8-floor.webp",
+      alt: "Tlocrt stana 8 u prizemlju Lamele A",
+    },
+    positionPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-8-position.webp",
+      alt: "Pozicija stana 8 na etaži Lamele A",
+    },
+    commercialSketchPdf:
+      "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-8.pdf",
+    verification: "verified",
+  },
+  {
+    id: "petrovaradin-vladimira-gortana-8c-stan-b-1-2",
+    slug: "stan-b-1-2",
+    projectSlug: "petrovaradin-vladimira-gortana-8c",
+    label: "Stan B 1.2",
+    building: "Lamela B",
+    floor: "Prvi sprat",
+    roomType: "Četvorosoban",
+    area: 101.33,
+    status: "available",
+    terrace: "Lođa 5,36 m²",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-b-1-2-3d.webp",
+      alt: "Trodimenzionalni prikaz stana B 1.2 u Lameli B",
+    },
+    floorPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-b-1-2-floor.webp",
+      alt: "Tlocrt stana B 1.2 na prvom spratu Lamele B",
+    },
+    positionPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-b-1-2-position.webp",
+      alt: "Pozicija stana B 1.2 na etaži Lamele B",
+    },
+    commercialSketchPdf:
+      "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-b-1-2.pdf",
+    verification: "verified",
   },
 ];
 

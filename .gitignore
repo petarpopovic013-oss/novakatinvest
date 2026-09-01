@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# raw asset folders
+# raw source materials are stored outside the repository in ../materials
+/Materials/
+/Petrovaradin - Ponuda/
+/Prodaja - Temerinska 143 za SAJT/
 /Stan 19/
 /Stan 20/
