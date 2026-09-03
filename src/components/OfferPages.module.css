@@ -1027,6 +1027,51 @@
   transform: translateY(2px);
 }
 
+.unitGallerySection {
+  padding-top: clamp(80px, 9vw, 130px);
+}
+
+.unitGalleryGrid {
+  display: grid;
+  margin-top: clamp(40px, 5vw, 64px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.unitGalleryGrid figure {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #d6d5d0;
+}
+
+.unitGalleryGrid .coverImage {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.unitGalleryGrid figure:hover .coverImage {
+  transform: scale(1.02);
+}
+
+.unitGalleryGrid figure > span {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--foreground);
+  font-size: 10px;
+  z-index: 2;
+}
+
 .mobileSalesBar {
   display: none;
 }
@@ -1263,6 +1308,11 @@
     aspect-ratio: 16 / 10;
   }
 
+  .unitGalleryGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .salesCta {
     margin-right: 0;
     margin-left: 0;
@@ -1434,6 +1484,7 @@
   .projectMedia .coverImage,
   .unitVisual .containImage,
   .projectGallery .coverImage,
+  .unitGalleryGrid .coverImage,
   .planVisual .containImage,
   .textLink svg,
   .unitArrow,

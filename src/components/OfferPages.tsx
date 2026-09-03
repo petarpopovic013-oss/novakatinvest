@@ -424,12 +424,16 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
         </dl>
       </section>
 
-      {unit.floorPlan && unit.positionPlan ? (
+      {unit.floorPlan && (unit.positionPlan || unit.tablePlan) ? (
         <section className={styles.plansSection}>
           <div className={styles.sectionHeader}>
             <div>
               <span className={styles.sectionEyebrow}>Tehnički prikazi</span>
-              <h2>Tlocrt i pozicija na etaži.</h2>
+              <h2>
+                {unit.positionPlan
+                  ? "Tlocrt i pozicija na etaži."
+                  : "Tlocrt i specifikacija površina."}
+              </h2>
             </div>
             <p>Otvorite bilo koji prikaz za pregled u punoj veličini.</p>
           </div>
@@ -447,19 +451,64 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
               <span>Tlocrt stana</span>
               <strong>Otvorite prikaz <ArrowRightIcon /></strong>
             </a>
-            <a href={unit.positionPlan.src} target="_blank" rel="noreferrer">
-              <div className={styles.planVisual}>
+            {unit.positionPlan ? (
+              <a href={unit.positionPlan.src} target="_blank" rel="noreferrer">
+                <div className={styles.planVisual}>
+                  <Image
+                    className={styles.containImage}
+                    src={unit.positionPlan.src}
+                    alt={unit.positionPlan.alt}
+                    fill
+                    sizes="(max-width: 760px) calc(100vw - 28px), 42vw"
+                  />
+                </div>
+                <span>Pozicija na etaži</span>
+                <strong>Otvorite prikaz <ArrowRightIcon /></strong>
+              </a>
+            ) : unit.tablePlan ? (
+              <a href={unit.tablePlan.src} target="_blank" rel="noreferrer">
+                <div className={styles.planVisual}>
+                  <Image
+                    className={styles.containImage}
+                    src={unit.tablePlan.src}
+                    alt={unit.tablePlan.alt}
+                    fill
+                    sizes="(max-width: 760px) calc(100vw - 28px), 42vw"
+                  />
+                </div>
+                <span>Specifikacija površina</span>
+                <strong>Otvorite prikaz <ArrowRightIcon /></strong>
+              </a>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
+      {unit.gallery && unit.gallery.length > 0 ? (
+        <section className={styles.unitGallerySection} aria-label="Galerija enterijera stana">
+          <div className={styles.sectionHeader}>
+            <div>
+              <span className={styles.sectionEyebrow}>3D vizuelizacija enterijera</span>
+              <h2>Inspiracija i organizacija prostora.</h2>
+            </div>
+            <p>
+              Istražite predloge uređenja, raspored prostorija i ambijente
+              predviđene za {unit.label}.
+            </p>
+          </div>
+          <div className={styles.unitGalleryGrid}>
+            {unit.gallery.map((image, index) => (
+              <figure key={image.src}>
                 <Image
-                  className={styles.containImage}
-                  src={unit.positionPlan.src}
-                  alt={unit.positionPlan.alt}
+                  className={styles.coverImage}
+                  src={image.src}
+                  alt={image.alt}
                   fill
-                  sizes="(max-width: 760px) calc(100vw - 28px), 42vw"
+                  sizes="(max-width: 760px) calc(100vw - 28px), (max-width: 1024px) 50vw, 50vw"
                 />
-              </div>
-              <span>Pozicija na etaži</span>
-              <strong>Otvorite prikaz <ArrowRightIcon /></strong>
-            </a>
+                <span>0{index + 1}</span>
+              </figure>
+            ))}
           </div>
         </section>
       ) : null}

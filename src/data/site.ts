@@ -77,7 +77,7 @@ export const projects: Project[] = [
       "Savremena stambena zgrada sa dve lamele, liftovima, podzemnom garažom i uređenim zelenim površinama u mirnom delu Petrovaradina.",
     description: [
       "Na adresi Vladimira Gortana 8c nastaje slobodnostojeća stambena zgrada sa 53 stana, organizovana kroz lamele A i B, spratnosti Po + P + 1 + Pk (M).",
-      "Aktuelna ponuda obuhvata četiri trosobna i četvorosobna stana, sa detaljnim 3D prikazima, tlocrtima, pozicijama na etaži i komercijalnim skicama.",
+      "Aktuelna ponuda obuhvata pet trosobnih i četvorosobnih stanova, sa detaljnim 3D prikazima, tlocrtima, pozicijama na etaži i komercijalnim skicama.",
     ],
     hero: {
       src: "/images/novak/petrovaradin-vladimira-gortana-8c/building-street.webp",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
       },
     ],
     facts: [
-      { label: "Aktuelna ponuda", value: "4 stana" },
+      { label: "Aktuelna ponuda", value: "5 stanova" },
       { label: "Strukture", value: "Trosobni i četvorosobni" },
       { label: "Spratnost", value: "Po + P + 1 + Pk (M)" },
       { label: "Lokacija", value: "Petrovaradin" },
@@ -112,6 +112,65 @@ export const projects: Project[] = [
       {
         title: "Sigurnost",
         description: "Protivprovalna ulazna vrata na stambenim jedinicama.",
+      },
+    ],
+    verification: "verified",
+  },
+  {
+    id: "sremska-kamenica-zmaj-jovina-25",
+    slug: "sremska-kamenica-zmaj-jovina-25",
+    name: "Sremska Kamenica - Zmaj Jovina 25",
+    status: "available",
+    statusLabel: "U ponudi",
+    featured: true,
+    location: { address: "Zmaj Jovina 25", city: "Sremska Kamenica" },
+    shortDescription:
+      "Ekskluzivan stambeni objekat moderne arhitekture u mirnom delu Sremske Kamenice, sa komfornim četvorosobnim stanovima i privatnim garažama.",
+    description: [
+      "Na adresi Zmaj Jovina 25 u Sremskoj Kamenici nastaje savremena stambena vila sa prostranim stanovima visokog komfora, pažljivo osmišljena za miran i kvalitetan porodični život.",
+      "Aktuelna ponuda obuhvata komforne četvorosobne stanove sa vrhunskim rasporedom, dve terase, odvojenim noćnim zonama i obezbeđenim garažnim mestima u prizemlju objekta.",
+    ],
+    hero: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/building-hero.webp",
+      alt: "Ugaoni pogled na objekat Sremska Kamenica - Zmaj Jovina 25",
+    },
+    gallery: [
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/building-front.webp",
+        alt: "Frontalni pogled na vilu u Zmaj Jovinoj 25 u Sremskoj Kamenici",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/building-hero.webp",
+        alt: "Ugaoni pogled na modernu fasadu sa garažama i zelenilom",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/building-side.webp",
+        alt: "Bočna fasada i prilaz objektu u Zmaj Jovinoj 25",
+      },
+    ],
+    facts: [
+      { label: "Aktuelna ponuda", value: "2 stana" },
+      { label: "Strukture", value: "Četvorosobni" },
+      { label: "Spratnost", value: "P + 2" },
+      { label: "Lokacija", value: "Sremska Kamenica" },
+    ],
+    amenities: [
+      "Garažna mesta u prizemlju",
+      "Visok nivo privatnosti",
+      "Prostrane terase i mirno okruženje",
+    ],
+    constructionStandards: [
+      {
+        title: "Fasada i stolarija",
+        description: "Energetski efikasna termoizolacija sa modernim dekorativnim elementima.",
+      },
+      {
+        title: "Podovi i keramika",
+        description: "Vrhunski parket i uvozna keramika visokog kvaliteta prilagođena enterijeru.",
+      },
+      {
+        title: "Privatne garaže",
+        description: "Direktan i komforan pristup privatnim garažama u prizemlju objekta.",
       },
     ],
     verification: "verified",
@@ -392,6 +451,34 @@ export const units: Unit[] = [
     verification: "verified",
   },
   {
+    id: "petrovaradin-vladimira-gortana-8c-stan-6",
+    slug: "stan-6",
+    projectSlug: "petrovaradin-vladimira-gortana-8c",
+    label: "Stan 6",
+    building: "Lamela A",
+    floor: "Prizemlje",
+    roomType: "Trosoban",
+    area: 58.56,
+    status: "available",
+    terrace: "Lođa 2,02 m²",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-6-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 6 u Lameli A",
+    },
+    floorPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-6-floor.webp",
+      alt: "Tlocrt stana 6 u prizemlju Lamele A",
+    },
+    positionPlan: {
+      src: "/images/novak/petrovaradin-vladimira-gortana-8c/stan-6-position.webp",
+      alt: "Pozicija stana 6 na etaži Lamele A",
+    },
+    commercialSketchPdf:
+      "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-6.pdf",
+    verification: "verified",
+  },
+  {
     id: "petrovaradin-vladimira-gortana-8c-stan-7",
     slug: "stan-7",
     projectSlug: "petrovaradin-vladimira-gortana-8c",
@@ -473,6 +560,96 @@ export const units: Unit[] = [
     },
     commercialSketchPdf:
       "/documents/petrovaradin-vladimira-gortana-8c/komercijalna-skica-stan-b-1-2.pdf",
+    verification: "verified",
+  },
+  {
+    id: "sremska-kamenica-zmaj-jovina-25-stan-1",
+    slug: "stan-1",
+    projectSlug: "sremska-kamenica-zmaj-jovina-25",
+    label: "Stan 1",
+    floor: "Prvi sprat",
+    roomType: "Četvorosoban",
+    area: 80.63,
+    status: "available",
+    terrace: "Dve terase (7,04 m²)",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 1 u Sremskoj Kamenici",
+    },
+    floorPlan: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-floor.webp",
+      alt: "Tlocrt stana 1 u objektu Zmaj Jovina 25",
+    },
+    tablePlan: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-table.webp",
+      alt: "Specifikacija površina stana 1",
+    },
+    gallery: [
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-interior-1.webp",
+        alt: "Dnevni boravak stana 1 sa sofom i TV zidom",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-interior-2.webp",
+        alt: "Široki pogled na trpezariju i kuhinju stana 1",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-interior-3.webp",
+        alt: "Trpezarijski kutak sa modernom rasvetom stana 1",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-1-interior-4.webp",
+        alt: "Kuhinjski ambijent stana 1",
+      },
+    ],
+    commercialSketchPdf:
+      "/documents/sremska-kamenica-zmaj-jovina-25/komercijalna-skica-stan-1.pdf",
+    verification: "verified",
+  },
+  {
+    id: "sremska-kamenica-zmaj-jovina-25-stan-2",
+    slug: "stan-2",
+    projectSlug: "sremska-kamenica-zmaj-jovina-25",
+    label: "Stan 2",
+    floor: "Drugi sprat",
+    roomType: "Četvorosoban",
+    area: 101.38,
+    status: "available",
+    terrace: "Dve terase (8,91 m²)",
+    bathrooms: 2,
+    visual: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-3d.webp",
+      alt: "Trodimenzionalni prikaz stana 2 u Sremskoj Kamenici",
+    },
+    floorPlan: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-floor.webp",
+      alt: "Tlocrt stana 2 u objektu Zmaj Jovina 25",
+    },
+    tablePlan: {
+      src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-table.webp",
+      alt: "Specifikacija površina stana 2",
+    },
+    gallery: [
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-interior-1.webp",
+        alt: "Luksuzni dnevni boravak stana 2",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-interior-2.webp",
+        alt: "Pogled iz visine na dnevni boravak stana 2",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-interior-3.webp",
+        alt: "Trpezarija i moderna kuhinja stana 2",
+      },
+      {
+        src: "/images/novak/sremska-kamenica-zmaj-jovina-25/stan-2-interior-4.webp",
+        alt: "TV zid sa mermernom teksturom u stanu 2",
+      },
+    ],
+    commercialSketchPdf:
+      "/documents/sremska-kamenica-zmaj-jovina-25/komercijalna-skica-stan-2.pdf",
     verification: "verified",
   },
 ];
