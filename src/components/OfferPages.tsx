@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { siteSettings } from "../data/site";
 import type { Project, Unit } from "../types/site";
-import { ArrowRightIcon, DownloadIcon } from "./icons";
+import { ArrowRightIcon, DownloadIcon, PhoneIcon } from "./icons";
 import styles from "./OfferPages.module.css";
 
 const structures = [
@@ -313,6 +313,8 @@ export function ProjectOffer({ project, units }: { project: Project; units: Unit
         ))}
       </section>
 
+      <ParkingNoticeSection project={project} />
+
       <section
         className={`${styles.projectGallery} ${
           project.gallery.length === 2 ? styles.projectGalleryTwo : ""
@@ -528,7 +530,7 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
               <a
                 className={styles.downloadSketchButton}
                 href={unit.commercialSketchPdf}
-                download
+                download={`${unit.label} - Komercijalna skica.pdf`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -539,6 +541,8 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
           </div>
         </section>
       ) : null}
+
+      <ParkingNoticeSection project={project} unit={unit} />
 
       <section className={styles.salesCta}>
         <div>
@@ -553,6 +557,44 @@ export function UnitOffer({ project, unit }: { project: Project; unit: Unit }) {
 
       <MobileSalesBar project={project} unit={unit} />
     </main>
+  );
+}
+
+export function ParkingNoticeSection({
+  project,
+  className,
+}: {
+  project: Project;
+  unit?: Unit;
+  className?: string;
+}) {
+  return (
+    <section
+      className={`${styles.parkingSection} ${className ?? ""}`}
+      aria-label="Informacije o parking mestima"
+    >
+      <div className={styles.parkingCard}>
+        <div className={styles.parkingCopy}>
+          <span className={styles.parkingEyebrow}>
+            Parking mesta · {project.name}
+          </span>
+          <p className={styles.parkingMessage}>
+            Za dostupna parking mesta kontaktirajte agenta prodaje
+          </p>
+        </div>
+
+        <div className={styles.parkingAction}>
+          <a
+            className={styles.parkingCallButton}
+            href={siteSettings.phoneHref}
+            aria-label="Pozovite agenta prodaje"
+          >
+            <PhoneIcon />
+            <span>Pozovite agenta</span>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 

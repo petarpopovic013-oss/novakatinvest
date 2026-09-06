@@ -1027,6 +1027,113 @@
   transform: translateY(2px);
 }
 
+.parkingSection {
+  padding: clamp(60px, 8vw, 110px) clamp(16px, 3vw, 40px) 0;
+}
+
+.parkingCard {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  padding: clamp(32px, 4.5vw, 56px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ebeae6;
+}
+
+.parkingCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: var(--charcoal);
+}
+
+.parkingCopy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.parkingEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.parkingMessage {
+  margin: 0;
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 960px) {
+  .parkingMessage {
+    white-space: nowrap;
+  }
+}
+
+.parkingAction {
+  flex-shrink: 0;
+}
+
+.parkingCallButton {
+  display: inline-flex;
+  min-height: 52px;
+  padding: 0 26px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid var(--charcoal);
+  border-radius: 3px;
+  background: var(--charcoal);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+  white-space: nowrap;
+}
+
+.parkingCallButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 180ms ease;
+}
+
+.parkingCallButton:hover,
+.parkingCallButton:focus-visible {
+  background: transparent;
+  color: var(--foreground);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.parkingCallButton:hover svg,
+.parkingCallButton:focus-visible svg {
+  transform: scale(1.1);
+}
+
 .unitGallerySection {
   padding-top: clamp(80px, 9vw, 130px);
 }
@@ -1319,23 +1426,27 @@
     padding: 44px 22px;
   }
 
-  .sketchDownloadSection {
+  .sketchDownloadSection,
+  .parkingSection {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .sketchDownloadCard {
+  .sketchDownloadCard,
+  .parkingCard {
     flex-direction: column;
     align-items: stretch;
     padding: 34px 22px;
     gap: 24px;
   }
 
-  .sketchDownloadAction {
+  .sketchDownloadAction,
+  .parkingAction {
     width: 100%;
   }
 
-  .downloadSketchButton {
+  .downloadSketchButton,
+  .parkingCallButton {
     width: 100%;
     white-space: normal;
     text-align: center;
@@ -1454,12 +1565,14 @@
   .unitsSection,
   .unitOverview,
   .plansSection,
-  .sketchDownloadSection {
+  .sketchDownloadSection,
+  .parkingSection {
     padding-right: 12px;
     padding-left: 12px;
   }
 
-  .sketchDownloadCard {
+  .sketchDownloadCard,
+  .parkingCard {
     padding-right: 18px;
     padding-left: 18px;
   }
@@ -1492,7 +1605,9 @@
   .heroFooter svg,
   .planGrid strong svg,
   .downloadSketchButton,
-  .downloadSketchButton svg {
+  .downloadSketchButton svg,
+  .parkingCallButton,
+  .parkingCallButton svg {
     transition: none;
   }
 }
