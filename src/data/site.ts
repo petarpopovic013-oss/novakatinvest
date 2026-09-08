@@ -10,6 +10,51 @@ export const siteSettings: SiteSettings = {
   mapUrl: "https://maps.google.com/?q=Radnička+49,+Novi+Sad",
 };
 
+export const contactChannels = {
+  sales: {
+    title: "Prodaja stanova",
+    badge: "Direktna prodaja",
+    phone: "064 812 4494",
+    phoneDisplay: "+381 64 812 4494",
+    phoneHref: "tel:+381648124494",
+    email: "prodaja@novakinvest.rs",
+    emailHref: "mailto:prodaja@novakinvest.rs",
+    description:
+      "Razgovarajte direktno sa našim timom prodaje o aktuelnim projektima, slobodnim strukturama stanova, komercijalnim skicama i uslovima kupovine.",
+    highlights: [
+      "Direktan kontakt sa investitorom bez posrednika",
+      "Detaljne informacije o dostupnim stanovima i garažama",
+      "Zakazivanje termina za sastanak i razgovor",
+    ],
+  },
+  administration: {
+    title: "Administracija i uprava",
+    badge: "Pravna i poslovna pitanja",
+    email: "office@novakinvest.rs",
+    emailHref: "mailto:office@novakinvest.rs",
+    description:
+      "Za opšte informacije o poslovanju kompanije, administrativna i pravna pitanja, ugovore i saradnju sa dobavljačima i partnerima.",
+    highlights: [
+      "Opšti upiti i administrativna korespodencija",
+      "Pravna dokumentacija i ugovaranje",
+      "Saradnja sa kooperantima i projektantima",
+    ],
+  },
+  office: {
+    title: "Sedište kompanije",
+    address: "Radnička 49",
+    city: "21000 Novi Sad",
+    country: "Srbija",
+    fullAddress: "Radnička 49, 21000 Novi Sad",
+    mapUrl: "https://maps.google.com/?q=Radnička+49,+Novi+Sad",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Radni%C4%8Dka+49,+Novi+Sad&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    workingHours: "Ponedeljak – Petak: 08:00 – 16:00",
+    weekend: "Subota i nedelja: Neradni dani",
+    note: "Sastanci u kancelariji se zakazuju unapred putem telefona ili e-maila.",
+  },
+} as const;
+
 export const navigation = [
   { label: "Početna", href: "/" },
   { label: "O nama", href: "/o-nama" },

@@ -1,0 +1,605 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 6vw, 84px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+}
+
+/* ------------------------------------------------------------------
+   Hero Section - Matched identically to "O nama"
+   ------------------------------------------------------------------ */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(36px, 5vw, 68px) clamp(20px, 4vw, 56px);
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  background-position: -1px -1px;
+}
+
+/* Subtle corner drafting tick-marks for architectural feel */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  border-top: 1.5px solid var(--line);
+  border-right: 1.5px solid var(--line);
+  pointer-events: none;
+}
+
+/* Organic Monogram Watermark - Centered vertically identically to "O nama" */
+.heroWatermark {
+  position: absolute;
+  right: clamp(30px, 6vw, 110px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(300px, 30vw, 460px);
+  height: clamp(300px, 30vw, 460px);
+  opacity: 0.055;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroWatermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--foreground);
+}
+
+.breadcrumbs span[aria-current="page"] {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.eyebrowWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 5px 11px;
+  border-radius: 2px;
+  background: var(--charcoal);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eyebrowNote {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.heroTitle {
+  margin: 0 0 18px;
+  font-size: clamp(38px, 4.8vw, 68px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  color: var(--foreground);
+  text-wrap: balance;
+}
+
+.heroLead {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: var(--muted);
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------------
+   Contact Channels Grid (Prodaja & Administracija)
+   ------------------------------------------------------------------ */
+.channelsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.channelsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.channelCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 3.6vw, 44px);
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 240ms cubic-bezier(0.2, 0, 0.2, 1),
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.channelCard:hover {
+  border-color: #bebeba;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.channelCardFeatured {
+  background: #fbfbf9;
+  border-color: #cbcbca;
+}
+
+.channelTop {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.channelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.channelBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 9px;
+  border-radius: 2px;
+  background: var(--charcoal);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.channelBadgeAlt {
+  background: #ebebe7;
+  color: var(--charcoal);
+}
+
+.channelTitle {
+  margin: 0;
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--foreground);
+}
+
+.channelDescription {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.channelDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--foreground);
+}
+
+.detailIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--charcoal);
+  flex-shrink: 0;
+}
+
+.detailIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.detailLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.detailValue {
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: color 180ms ease;
+  word-break: break-word;
+}
+
+.detailValue:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.channelHighlights {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channelHighlights li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.channelHighlights li::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--charcoal);
+  flex-shrink: 0;
+  transform: translateY(-2px);
+}
+
+.channelActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actionButtonPrimary,
+.actionButtonSecondary {
+  display: inline-flex;
+  min-height: 46px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.actionButtonPrimary {
+  background: var(--charcoal);
+  color: var(--white);
+  border: 1px solid var(--charcoal);
+}
+
+.actionButtonPrimary:hover,
+.actionButtonPrimary:focus-visible {
+  background: #000000;
+  border-color: #000000;
+}
+
+.actionButtonSecondary {
+  background: var(--paper);
+  color: var(--foreground);
+  border: 1px solid var(--line);
+}
+
+.actionButtonSecondary:hover,
+.actionButtonSecondary:focus-visible {
+  background: var(--white);
+  border-color: #a8a8a4;
+}
+
+.actionButtonPrimary svg,
+.actionButtonSecondary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------
+   Office & Interactive Map Section
+   ------------------------------------------------------------------ */
+.officeSection {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.officeCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 3.6vw, 44px);
+  border-radius: var(--radius);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.officeHeader {
+  margin-bottom: 24px;
+}
+
+.officeHeader h2 {
+  margin: 12px 0 8px;
+  font-size: clamp(28px, 2.8vw, 40px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.officeHeader p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.officeInfoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+
+.officeInfoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.officeInfoItem .detailIcon {
+  background: var(--white);
+}
+
+.officeInfoText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.officeInfoText strong {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.officeInfoText span {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.officeNote {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.officeActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Map Container */
+.mapWrapper {
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #e8e8e6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  display: block;
+}
+
+.mapBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.mapBadge svg {
+  width: 15px;
+  height: 15px;
+  color: var(--charcoal);
+}
+
+.mapFloatingAction {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background: var(--charcoal);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.mapFloatingAction:hover {
+  background: #000000;
+  transform: translateY(-1px);
+}
+
+.mapFloatingAction svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ------------------------------------------------------------------
+   Responsive Breakpoints
+   ------------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .heroWatermark {
+    width: 320px;
+    height: 320px;
+    right: 20px;
+    opacity: 0.04;
+  }
+
+  .channelsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .officeSection {
+    grid-template-columns: 1fr;
+  }
+
+  .mapWrapper {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 28px 18px;
+  }
+
+  /* Centered, subtle ambient watermark on mobile matching "O nama" */
+  .heroWatermark {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(220px, 60vw, 280px);
+    height: clamp(220px, 60vw, 280px);
+    opacity: 0.04;
+  }
+
+  .channelActions {
+    flex-direction: column;
+  }
+
+  .actionButtonPrimary,
+  .actionButtonSecondary {
+    width: 100%;
+  }
+
+  .mapWrapper {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding: 28px 16px;
+  }
+
+  .channelCard,
+  .officeCard {
+    padding: 20px 16px;
+  }
+}

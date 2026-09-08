@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "../../src/components/ComingSoonPage";
+import { AboutPage } from "../../src/components/AboutPage";
 
 export const metadata: Metadata = {
   title: "O nama",
-  description: "Stranica O nama biće uskoro dostupna.",
+  description:
+    "Novak AT Invest je građevinska kompanija iz Novog Sada sa više od 15 godina iskustva u razvoju i izgradnji savremenih stambenih i poslovnih objekata.",
 };
 
-export default function AboutPage() {
-  return <ComingSoonPage title="O nama" />;
+export default function Page() {
+  return <AboutPage />;
 }
+

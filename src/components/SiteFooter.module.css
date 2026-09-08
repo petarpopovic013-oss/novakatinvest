@@ -163,26 +163,27 @@
   min-width: 0;
 }
 
-.contact > div {
-  padding: 0 0 15px;
+.contactSection {
+  padding: 0 0 13px;
   border-bottom: 1px solid #393936;
 }
 
-.contact > div + div {
-  padding-top: 15px;
+.contactSection + .contactSection {
+  padding-top: 13px;
 }
 
-.contact span {
+.contactType {
   display: block;
   margin-bottom: 6px;
-  color: #777773;
-  font-size: 9px;
-  letter-spacing: 0.05em;
+  color: #8e8e8a;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.contact a {
-  display: inline-block;
+.contactValue {
+  display: block;
   max-width: 100%;
   color: #d1d1cd;
   font-size: 12px;
@@ -191,8 +192,12 @@
   transition: color 180ms ease;
 }
 
-.contact a:hover,
-.contact a:focus-visible {
+.contactValue + .contactValue {
+  margin-top: 4px;
+}
+
+.contactValue:hover,
+.contactValue:focus-visible {
   color: #fff;
 }
 

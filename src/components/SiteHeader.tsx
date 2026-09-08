@@ -5,8 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { navigation, offerProjects, referenceProjects } from "../data/site";
-import { ArrowRightIcon } from "./icons";
+import { navigation, offerProjects, referenceProjects, siteSettings } from "../data/site";
+import { ArrowRightIcon, PhoneIcon } from "./icons";
 import styles from "./SiteHeader.module.css";
 
 const isRouteActive = (pathname: string, href: string) =>
@@ -118,16 +118,16 @@ export function SiteHeader() {
         </nav>
 
         <div className={styles.actions}>
-          <Link
+          <a
             className={styles.salesButton}
-            href="/kontakt"
-            aria-label="Kontaktirajte prodaju"
+            href={siteSettings.phoneHref}
+            aria-label="Pozovite agenta prodaje: 064 812 4494"
             onClick={() => setMenuOpen(false)}
           >
-            <span className={styles.salesDesktop}>Kontaktirajte prodaju</span>
-            <span className={styles.salesMobile}>Prodaja</span>
-            <ArrowRightIcon />
-          </Link>
+            <PhoneIcon />
+            <span className={styles.salesDesktop}>064 812 4494</span>
+            <span className={styles.salesMobile}>064 812 4494</span>
+          </a>
 
           <button
             className={`${styles.menuButton} ${menuOpen ? styles.menuButtonOpen : ""}`}

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +11,14 @@ import {
 } from "../data/site";
 import { ArrowUpRightIcon } from "./icons";
 import styles from "./HomePage.module.css";
+
+const heroSlides = offerProjects.slice(0, 3).map((project) => ({
+  id: project.id,
+  address: project.location.address,
+  city: project.location.city,
+  src: project.hero.src,
+  alt: project.hero.alt,
+}));
 
 const values = [
   {
@@ -58,26 +69,51 @@ const standards = [
 ] as const;
 
 export function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [activeSlide]);
+
+  const currentSlide = heroSlides[activeSlide] ?? heroSlides[0];
+
   return (
     <>
       <section className={styles.hero} aria-labelledby="home-heading">
-        <Image
-          className={styles.heroImage}
-          src="/reference-media/atrium-residence/01.webp"
-          alt="Atrium Residence kompleks"
-          fill
-          sizes="(max-width: 767px) calc(100vw - 24px), min(1576px, calc(100vw - 48px))"
-          preload
-        />
+        <div className={styles.heroSlides} aria-hidden="true">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`${styles.heroSlide} ${
+                index === activeSlide ? styles.heroSlideActive : ""
+              }`}
+            >
+              <Image
+                className={styles.heroImage}
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                sizes="(max-width: 767px) calc(100vw - 24px), min(1576px, calc(100vw - 48px))"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
         <div className={styles.heroShade} />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroMeta}>
-            <span>Temerinska 143</span>
+          <div className={styles.heroMeta} key={currentSlide.id}>
+            <span>{currentSlide.address}</span>
             <span aria-hidden="true">/</span>
-            <span>Novi Sad</span>
+            <span>{currentSlide.city}</span>
           </div>
-          <h1 id="home-heading">Gradimo prostore za život.</h1>
+          <h1 id="home-heading">
+            Oblikujemo način na koji živite <span className={styles.nowrap}>i radite.</span>
+          </h1>
           <p>
             Stvaramo savremene i funkcionalne domove, oslonjene na više od
             15 godina iskustva u građevinarstvu i neposredan odnos sa kupcima.
@@ -94,6 +130,22 @@ export function HomePage() {
             <span><strong>15+</strong> godina iskustva</span>
             <span>Projekti u Novom Sadu i okolini</span>
           </div>
+        </div>
+
+        <div className={styles.heroIndicators} role="tablist" aria-label="Izbor prikaza objekta">
+          {heroSlides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              role="tab"
+              className={`${styles.heroDot} ${
+                index === activeSlide ? styles.heroDotActive : ""
+              }`}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Prikaz ${index + 1}: ${slide.address}, ${slide.city}`}
+              aria-selected={index === activeSlide}
+            />
+          ))}
         </div>
       </section>
 
@@ -132,9 +184,6 @@ export function HomePage() {
               </Link>
 
               <div className={styles.projectBody}>
-                <div className={styles.statusLine}>
-                  <span className={styles.demoBadge}>{project.statusLabel}</span>
-                </div>
                 <h3>{project.name}</h3>
                 <p className={styles.location}>
                   {project.location.address}, {project.location.city}

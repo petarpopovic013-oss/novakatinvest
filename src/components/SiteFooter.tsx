@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { navigation, offerProjects, siteSettings } from "../data/site";
+import { contactChannels, navigation, offerProjects, siteSettings } from "../data/site";
 import { ArrowRightIcon } from "./icons";
 import styles from "./SiteFooter.module.css";
 
@@ -71,17 +71,26 @@ export function SiteFooter() {
 
           <div className={styles.contact}>
             <h3>Kontakt</h3>
-            <div>
-              <span>Telefon</span>
-              <a href={siteSettings.phoneHref}>{siteSettings.phone}</a>
+            <div className={styles.contactSection}>
+              <span className={styles.contactType}>Prodaja</span>
+              <a href={contactChannels.sales.phoneHref} className={styles.contactValue}>
+                {contactChannels.sales.phone}
+              </a>
+              <a href={contactChannels.sales.emailHref} className={styles.contactValue}>
+                {contactChannels.sales.email}
+              </a>
             </div>
-            <div>
-              <span>E-mail</span>
-              <a href={`mailto:${siteSettings.email}`}>{siteSettings.email}</a>
+
+            <div className={styles.contactSection}>
+              <span className={styles.contactType}>Administracija</span>
+              <a href={contactChannels.administration.emailHref} className={styles.contactValue}>
+                {contactChannels.administration.email}
+              </a>
             </div>
-            <div>
-              <span>Adresa</span>
-              <a href={siteSettings.mapUrl} target="_blank" rel="noreferrer">
+
+            <div className={styles.contactSection}>
+              <span className={styles.contactType}>Sedište</span>
+              <a href={siteSettings.mapUrl} target="_blank" rel="noreferrer" className={styles.contactValue}>
                 {siteSettings.address}
               </a>
             </div>
