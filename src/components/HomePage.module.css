@@ -64,17 +64,30 @@
   color: rgba(255, 255, 255, 0.88);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  animation: heroMetaFade 400ms ease;
 }
 
-@keyframes heroMetaFade {
+.heroTextBlock {
+  animation: heroTextFade 500ms ease;
+}
+
+@keyframes heroTextFade {
   from {
-    opacity: 0.2;
-    transform: translateY(3px);
+    opacity: 0.25;
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.heroBreak {
+  display: inline;
+}
+
+@media (min-width: 641px) {
+  .heroBreak {
+    display: block;
   }
 }
 
@@ -107,7 +120,8 @@
   white-space: nowrap;
 }
 
-.heroContent > p {
+.heroContent > p,
+.heroLead {
   max-width: 570px;
   margin: 24px 0 0;
   color: rgba(255, 255, 255, 0.86);
@@ -872,7 +886,8 @@
     font-size: clamp(46px, 15vw, 58px);
   }
 
-  .heroContent > p {
+  .heroContent > p,
+  .heroLead {
     font-size: 14px;
   }
 
@@ -896,6 +911,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .heroTextBlock,
   .projectImage,
   .referenceImage,
   .primaryButton,
@@ -903,5 +919,6 @@
   .lightButton,
   .referenceMeta > a {
     transition: none;
+    animation: none;
   }
 }

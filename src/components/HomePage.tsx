@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,13 +12,66 @@ import {
 import { ArrowUpRightIcon } from "./icons";
 import styles from "./HomePage.module.css";
 
-const heroSlides = offerProjects.slice(0, 3).map((project) => ({
-  id: project.id,
-  address: project.location.address,
-  city: project.location.city,
-  src: project.hero.src,
-  alt: project.hero.alt,
-}));
+type HeroSlideCopy = {
+  title: ReactNode;
+  description: string;
+};
+
+const heroSlideCopy: Record<string, HeroSlideCopy> = {
+  "temerinska-143": {
+    title: (
+      <>
+        Oblikujemo način na koji živite{" "}
+        <span className={styles.nowrap}>i radite.</span>
+      </>
+    ),
+    description:
+      "Stvaramo savremene i funkcionalne domove, oslonjene na više od 15 godina iskustva u građevinarstvu i neposredan odnos sa kupcima.",
+  },
+  "petrovaradin-vladimira-gortana-8c": {
+    title: (
+      <>
+        Gradimo novi ritam <br className={styles.heroBreak} />
+        života u Petrovaradinu.
+      </>
+    ),
+    description:
+      "Stvaramo savremene i funkcionalne domove, pažljivo projektovane za udoban svakodnevni život i sigurnu vrednost za budućnost.",
+  },
+  "sremska-kamenica-zmaj-jovina-25": {
+    title: (
+      <>
+        Savremeno stanovanje <br className={styles.heroBreak} />
+        u miru Sremske Kamenice.
+      </>
+    ),
+    description:
+      "Kreiramo kvalitetne i promišljeno osmišljene domove, namenjene porodičnom životu, komforu i uživanju u mirnom okruženju.",
+  },
+};
+
+const heroSlides = offerProjects.slice(0, 3).map((project) => {
+  const copy = heroSlideCopy[project.id] ?? {
+    title: (
+      <>
+        Oblikujemo način na koji živite{" "}
+        <span className={styles.nowrap}>i radite.</span>
+      </>
+    ),
+    description:
+      "Stvaramo savremene i funkcionalne domove, oslonjene na više od 15 godina iskustva u građevinarstvu i neposredan odnos sa kupcima.",
+  };
+
+  return {
+    id: project.id,
+    address: project.location.address,
+    city: project.location.city,
+    src: project.hero.src,
+    alt: project.hero.alt,
+    title: copy.title,
+    description: copy.description,
+  };
+});
 
 const values = [
   {
@@ -106,18 +159,15 @@ export function HomePage() {
         <div className={styles.heroShade} />
 
         <div className={styles.heroContent}>
-          <div className={styles.heroMeta} key={currentSlide.id}>
-            <span>{currentSlide.address}</span>
-            <span aria-hidden="true">/</span>
-            <span>{currentSlide.city}</span>
+          <div key={currentSlide.id} className={styles.heroTextBlock}>
+            <div className={styles.heroMeta}>
+              <span>{currentSlide.address}</span>
+              <span aria-hidden="true">/</span>
+              <span>{currentSlide.city}</span>
+            </div>
+            <h1 id="home-heading">{currentSlide.title}</h1>
+            <p className={styles.heroLead}>{currentSlide.description}</p>
           </div>
-          <h1 id="home-heading">
-            Oblikujemo način na koji živite <span className={styles.nowrap}>i radite.</span>
-          </h1>
-          <p>
-            Stvaramo savremene i funkcionalne domove, oslonjene na više od
-            15 godina iskustva u građevinarstvu i neposredan odnos sa kupcima.
-          </p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryButton} href="/ponuda">
               Pogledajte ponudu <ArrowUpRightIcon />
