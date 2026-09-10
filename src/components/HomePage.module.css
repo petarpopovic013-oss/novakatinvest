@@ -114,6 +114,8 @@
   line-height: 0.94;
   letter-spacing: -0.06em;
   text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .nowrap {
@@ -743,8 +745,8 @@
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 680px;
-    padding: 64px 20px 68px;
+    min-height: clamp(520px, calc(100svh - 96px), 640px);
+    padding: 48px 20px 56px;
   }
 
   .heroImage {
@@ -757,18 +759,41 @@
       linear-gradient(180deg, rgba(17, 17, 16, 0.07) 0%, rgba(17, 17, 16, 0.52) 100%);
   }
 
+  .nowrap {
+    white-space: normal;
+  }
+
   .heroContent h1 {
-    font-size: clamp(52px, 16vw, 74px);
+    font-size: clamp(32px, 8.2vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .heroContent > p,
+  .heroLead {
+    margin: 16px 0 0;
+    font-size: 14.5px;
+    line-height: 1.52;
   }
 
   .heroActions {
     display: grid;
     grid-template-columns: 1fr;
+    margin-top: 22px;
+    gap: 8px;
   }
 
   .primaryButton,
   .secondaryButton {
     width: 100%;
+    min-height: 46px;
+  }
+
+  .heroHighlights {
+    margin-top: 18px;
+    gap: 8px 18px;
   }
 
   .heroIndicators {
@@ -777,7 +802,7 @@
   }
 
   .heroDot {
-    width: 36px;
+    width: 32px;
   }
 
   .section {
@@ -873,26 +898,37 @@
 
 @media (max-width: 420px) {
   .hero {
-    min-height: 700px;
-    padding: 56px 16px 64px;
+    min-height: clamp(480px, calc(100svh - 80px), 580px);
+    padding: 40px 16px 50px;
   }
 
   .heroMeta {
     gap: 7px;
     font-size: 10px;
+    margin-bottom: 12px;
   }
 
   .heroContent h1 {
-    font-size: clamp(46px, 15vw, 58px);
+    font-size: clamp(26px, 7.6vw, 32px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
   }
 
   .heroContent > p,
   .heroLead {
-    font-size: 14px;
+    margin: 12px 0 0;
+    font-size: 13.5px;
+    line-height: 1.48;
   }
 
   .heroHighlights {
-    gap: 8px 18px;
+    margin-top: 16px;
+    gap: 6px 14px;
+    font-size: 10.5px;
+  }
+
+  .heroHighlights strong {
+    font-size: 14px;
   }
 
   .facts {
@@ -907,6 +943,12 @@
 
   .projectBody {
     min-height: 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .heroContent h1 {
+    font-size: 24px;
   }
 }
 

@@ -134,6 +134,8 @@
   line-height: 1.06;
   letter-spacing: -0.045em;
   color: var(--foreground);
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .heroLead {
@@ -650,6 +652,13 @@
 @media (max-width: 767px) {
   .hero {
     padding: 28px 18px;
+  }
+
+  .heroTitle {
+    font-size: clamp(27px, 7.5vw, 36px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    margin-bottom: 16px;
   }
 
   /* Centered, subtle ambient watermark on mobile */

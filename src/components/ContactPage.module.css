@@ -124,6 +124,8 @@
   letter-spacing: -0.05em;
   color: var(--foreground);
   text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .heroLead {
@@ -568,6 +570,13 @@
     padding: 28px 18px;
   }
 
+  .heroTitle {
+    font-size: clamp(28px, 7.8vw, 38px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 14px;
+  }
+
   /* Centered, subtle ambient watermark on mobile matching "O nama" */
   .heroWatermark {
     left: 50%;
@@ -596,6 +605,11 @@
 @media (max-width: 420px) {
   .hero {
     padding: 28px 16px;
+  }
+
+  .heroTitle {
+    font-size: clamp(24px, 7vw, 29px);
+    line-height: 1.1;
   }
 
   .channelCard,
