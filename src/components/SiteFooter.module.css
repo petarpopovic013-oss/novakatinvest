@@ -203,6 +203,7 @@
 
 .legal {
   display: flex;
+  flex-wrap: wrap;
   padding-top: 17px;
   justify-content: space-between;
   gap: 24px;

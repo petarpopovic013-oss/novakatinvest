@@ -103,6 +103,7 @@ export function SiteFooter() {
           © {currentYear} {siteSettings.legalName}
         </span>
         <span>Više od 15 godina iskustva u građevinarstvu</span>
+        <span>Developed by Petar Popović</span>
       </div>
     </footer>
   );
