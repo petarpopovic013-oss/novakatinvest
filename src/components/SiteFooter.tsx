@@ -31,7 +31,7 @@ export function SiteFooter() {
           <Link
             className={styles.brand}
             href="/"
-            aria-label="Novak Invest — početna"
+            aria-label="Novak AT Invest — početna"
           >
             <Image
               src="/images/logo-cropped.jpg"
@@ -40,7 +40,7 @@ export function SiteFooter() {
               height={533}
               sizes="72px"
             />
-            <span>Novak <strong>Invest</strong></span>
+            <span>Novak <strong>AT Invest</strong></span>
           </Link>
           <p>
             Savremeni stambeni i stambeno-poslovni projekti u Novom Sadu i

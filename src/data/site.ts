@@ -1,7 +1,7 @@
-import type { Project, SiteSettings, Unit } from "../types/site";
+import type { MediaAsset, Project, SiteSettings, Unit } from "../types/site";
 
 export const siteSettings: SiteSettings = {
-  companyName: "Novak Invest",
+  companyName: "Novak AT Invest",
   legalName: "Novak AT Invest DOO",
   phone: "+381 64 812 4494",
   phoneHref: "tel:+381648124494",
@@ -19,6 +19,8 @@ export const contactChannels = {
     phoneHref: "tel:+381648124494",
     email: "prodaja@novakinvest.rs",
     emailHref: "mailto:prodaja@novakinvest.rs",
+    additionalEmail: "prodaja.novakatinvest@gmail.com",
+    additionalEmailHref: "mailto:prodaja.novakatinvest@gmail.com",
     description:
       "Razgovarajte direktno sa našim timom prodaje o aktuelnim projektima, slobodnim strukturama stanova, komercijalnim skicama i uslovima kupovine.",
     highlights: [
@@ -62,6 +64,47 @@ export const navigation = [
   { label: "Reference", href: "/reference" },
   { label: "Kontakt", href: "/kontakt" },
 ] as const;
+
+export type HomeSalesLocation = {
+  id: string;
+  name: string;
+  statusLabel: string;
+  location: {
+    address: string;
+    city: string;
+  };
+  shortDescription: string;
+  hero: MediaAsset;
+  listImage: MediaAsset;
+  facts: Array<{ label: string; value: string }>;
+  href: string | null;
+};
+
+export const taliaHomeLocation: HomeSalesLocation = {
+  id: "talia-residence",
+  name: "Talia Residence",
+  statusLabel: "Projekat u pripremi",
+  location: {
+    address: "Preradovićeva 25",
+    city: "Sremski Karlovci",
+  },
+  shortDescription:
+    "Stambeno-poslovni objekat savremene arhitekture, osmišljen kao funkcionalno i prijatno okruženje za stanovanje i poslovanje. Projekat je u pripremi, a detalje objavljujemo uskoro.",
+  hero: {
+    src: "/images/novak/talia-residence/hero.webp",
+    alt: "Ulični render stambeno-poslovnog objekta Talia Residence u Sremskim Karlovcima",
+  },
+  listImage: {
+    src: "/images/novak/talia-residence/overview.webp",
+    alt: "Pogled iz vazduha na kompleks Talia Residence u Sremskim Karlovcima",
+  },
+  facts: [
+    { label: "Namena", value: "Stambeno-poslovni objekat" },
+    { label: "Status", value: "U pripremi" },
+    { label: "Detalji", value: "Uskoro" },
+  ],
+  href: null,
+};
 
 export const projects: Project[] = [
   {

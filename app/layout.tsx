@@ -13,13 +13,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://novakinvest.rs"),
   title: {
-    default: "Novak Invest | Stanovi i projekti u Novom Sadu",
-    template: "%s | Novak Invest",
+    default: "Novak AT Invest | Stanovi i projekti u Novom Sadu",
+    template: "%s | Novak AT Invest",
   },
   description:
-    "Novak Invest razvija stambene i stambeno-poslovne projekte u Novom Sadu. Istražite aktuelnu ponudu, projekte i završene reference.",
+    "Novak AT Invest razvija stambene i stambeno-poslovne projekte u Novom Sadu. Istražite aktuelnu ponudu, projekte i završene reference.",
   keywords: [
-    "Novak Invest",
+    "Novak AT Invest",
     "stanovi Novi Sad",
     "novogradnja Novi Sad",
     "investitor Novi Sad",
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "sr_RS",
-    siteName: "Novak Invest",
-    title: "Novak Invest | Stanovi i projekti u Novom Sadu",
+    siteName: "Novak AT Invest",
+    title: "Novak AT Invest | Stanovi i projekti u Novom Sadu",
     description:
-      "Istražite Novak Invest projekte, aktuelnu ponudu i reference u Novom Sadu i okolini.",
+      "Istražite Novak AT Invest projekte, aktuelnu ponudu i reference u Novom Sadu i okolini.",
     images: ["/images/novak/temerinska-143/building-hero.webp"],
   },
 };

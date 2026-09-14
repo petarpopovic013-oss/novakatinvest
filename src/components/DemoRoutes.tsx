@@ -68,7 +68,7 @@ export function IntroHero({
     <section className={styles.introHero}>
       <div className={styles.heroContent}>
         <Breadcrumbs items={breadcrumbs} />
-        <span className="eyebrow">{eyebrow ?? "Novak Invest"}</span>
+        <span className="eyebrow">{eyebrow ?? "Novak AT Invest"}</span>
         <h1 className={styles.heroTitle}>{title}</h1>
         <p className={styles.heroCopy}>{description}</p>
         {children}
@@ -231,7 +231,7 @@ export function SalesBar({ projectSlug, unitSlug }: { projectSlug: string; unitS
 
 export function SalesCta({
   title = "Razgovarajte direktno sa prodajom",
-  description = "Za aktuelnu dostupnost, detalje projekta i naredne korake obratite se centralnom prodajnom timu Novak Invest.",
+  description = "Za aktuelnu dostupnost, detalje projekta i naredne korake obratite se centralnom prodajnom timu kompanije Novak AT Invest.",
   context,
   secondaryHref,
   secondaryLabel,

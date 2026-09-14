@@ -8,7 +8,7 @@ export function ComingSoonPage({ title }: { title: string }) {
     <main className={styles.page}>
       <section className={styles.panel} aria-labelledby="page-title">
         <div className={styles.topline}>
-          <span>Novak Invest</span>
+          <span>Novak AT Invest</span>
           <span>{title}</span>
         </div>
 

@@ -42,81 +42,57 @@ export const referenceStories: ReferenceStory[] = [
       { src: "/reference-media/gunduliceva-33/04.webp", alt: "Širi pogled na fasadu objekta Gundulićeva 33" },
     ],
     introduction: [
-      "U Gundulićevoj ulici 33 u Novom Sadu, na području Podbare, realizovan je moderan stambeno-poslovni objekat projektovan tako da spoji funkcionalnost savremenog stanovanja, kvalitet izvođenja i praktičnost svakodnevnog života u gradu. Objekat je smešten na izuzetno dobroj gradskoj lokaciji, u delu Novog Sada koji omogućava brz pristup centru, važnim saobraćajnicama i svim sadržajima potrebnim za udoban život.",
-      "Projekat Gundulićeva 33 obuhvata ukupno 23 stana, poslovni prostor, parking kapacitete i podzemnu garažu. Posebna pažnja tokom projektovanja i izvođenja radova posvećena je kvalitetu instalacija, bezbednosti, jednostavnom održavanju objekta i komforu njegovih budućih korisnika.",
-      "Savremena arhitektura, jasno definisane linije fasade i pažljivo obrađeni zajednički prostori daju objektu moderan, ali nenametljiv izgled koji se prirodno uklapa u urbano okruženje Podbare.",
+      "U Gundulićevoj ulici 33 na Podbari realizovan je savremen stambeno-poslovni objekat na lokaciji koja omogućava brz pristup centru Novog Sada i važnim gradskim sadržajima.",
+      "Projekat obuhvata 23 stana, poslovni prostor, 23 parking mesta i 17 garažnih mesta u podzemnoj garaži, uz funkcionalno organizovane zajedničke prostore.",
     ],
     sections: [
       {
         title: "Stambeno-poslovni objekat sa 23 stana",
         paragraphs: [
-          "Gundulićeva 33 projektovana je kao stambeno-poslovni objekat sa 23 stambene jedinice, raspoređene tako da budućim stanarima omoguće prijatan i funkcionalan životni prostor.",
-          "Kod ovakvih projekata kvalitet se ne ogleda samo u onome što je vidljivo na prvi pogled. Završna obrada, fasada i enterijer predstavljaju samo jedan deo objekta, dok se njegov dugoročni kvalitet u velikoj meri zasniva na instalacionim sistemima i tehničkim rešenjima koji svakodnevno omogućavaju njegovo normalno i bezbedno funkcionisanje.",
-          "Upravo zato je na objektu u Gundulićevoj 33 velika pažnja posvećena kompletnom izvođenju elektroinstalacija jake i slabe struje, zajedno sa svim pripadajućim i pratećim radovima.",
+          "Gundulićeva 33 projektovana je sa 23 stambene jedinice i poslovnim prostorom, uz raspored prilagođen funkcionalnom svakodnevnom životu.",
+          "Na objektu su kompletno izvedene elektroinstalacije jake i slabe struje sa svim pripadajućim radovima.",
         ],
       },
       {
         title: "Kompletno izvedene elektroinstalacije jake struje",
         paragraphs: [
-          "Na stambeno-poslovnom objektu izvedene su elektroinstalacije jake struje, odnosno instalacije koje predstavljaju osnovu za sigurno i pouzdano napajanje stanova, poslovnog prostora i zajedničkih delova objekta električnom energijom.",
-          "Kod savremenih višestambenih objekata elektroinstalacije moraju biti planirane tako da odgovore na značajno veće potrebe korisnika nego što je to bio slučaj kod starijih stambenih zgrada. Broj električnih uređaja u domaćinstvima je veći, zahtevi za komforom rastu, a bezbednost i pouzdanost sistema predstavljaju apsolutni prioritet.",
-          "Radovi na objektu Gundulićeva 33 u Novom Sadu izvedeni su kao deo kompletnog sistema objekta, uz poštovanje projektne dokumentacije i svih zahteva koje podrazumeva izgradnja modernog stambeno-poslovnog prostora.",
-          "Posebno je važno da ovakve instalacije budu pravilno izvedene još u fazi izgradnje, jer kvalitet skrivenih sistema direktno utiče na pouzdanost objekta tokom njegovog dugogodišnjeg korišćenja.",
+          "Elektroinstalacije jake struje obezbeđuju sigurno i pouzdano napajanje stanova, poslovnog prostora i zajedničkih delova objekta.",
+          "Radovi su izvedeni u skladu sa projektnom dokumentacijom i zahtevima savremenog stambeno-poslovnog prostora.",
         ],
       },
       {
         title: "Elektroinstalacije slabe struje kao deo savremenog stanovanja",
         paragraphs: [
           "Pored instalacija jake struje, na objektu su realizovane i elektroinstalacije slabe struje, zajedno sa neophodnim pratećim radovima.",
-          "Savremeni stambeno-poslovni objekti više se ne mogu posmatrati samo kroz kvadraturu stanova i izgled fasade. Komunikacioni i drugi niskonaponski sistemi postali su sastavni deo kvalitetnog stanovanja i predstavljaju važan deo infrastrukture svakog novog objekta.",
-          "Pravilnim planiranjem i izvođenjem instalacija slabe struje stvaraju se tehnički preduslovi za jednostavno korišćenje različitih komunikacionih, sigurnosnih i drugih sistema koji su danas sastavni deo moderne stambene zgrade.",
-          "Kod projekta u Gundulićevoj ulici radovi su realizovani u koordinaciji sa ostalim fazama izgradnje, što je posebno značajno kod objekata sa većim brojem stanova, poslovnim prostorima, zajedničkim komunikacijama i garažnim delom.",
+          "Komunikacioni i sigurnosni sistemi izvedeni su u koordinaciji sa ostalim fazama gradnje i potrebama stambenog, poslovnog i garažnog dela objekta.",
         ],
       },
       {
         title: "Podzemna garaža i rešeno pitanje parkiranja",
         paragraphs: [
-          "Jedna od najvećih prednosti projekta Gundulićeva 33 jeste pažljivo rešeno pitanje parkiranja.",
-          "U centralnim gradskim zonama i starijim novosadskim naseljima pronalaženje slobodnog parking mesta često predstavlja svakodnevni problem. Zbog toga je već prilikom projektovanja ovog stambeno-poslovnog objekta značajna pažnja posvećena parking kapacitetima i sigurnom smeštaju vozila.",
-          "Objekat je projektovan sa 23 parking mesta i 17 garažnih mesta, uz podzemnu garažu koja predstavlja važan deo celokupnog koncepta objekta.",
-          "Na taj način korisnicima je obezbeđen znatno viši nivo praktičnosti. Nakon dolaska kući nema svakodnevne potrage za slobodnim mestom u okolnim ulicama, dok garažni prostor dodatno doprinosi zaštiti vozila od vremenskih uslova i povećava komfor stanovanja.",
-          "Dobro rešeno parkiranje danas predstavlja jednu od najvažnijih karakteristika kvalitetne novogradnje u Novom Sadu, posebno kada je reč o objektima koji se nalaze u širem centru grada.",
+          "Objekat ima 23 parking mesta i 17 garažnih mesta, uz podzemnu garažu kao važan deo projekta.",
+          "Ovakvo rešenje korisnicima donosi sigurniji smeštaj vozila i veći komfor na lokaciji nadomak centra grada.",
         ],
       },
       {
         title: "Moderna arhitektura i pažljivo uređeni zajednički prostori",
         paragraphs: [
-          "Izvedeni objekat karakteriše savremen arhitektonski izraz, sa kombinacijom tamnijih fasadnih površina, svetlijih detalja i pažljivo uklopljenih materijala.",
-          "Jednostavne i čiste linije daju zgradi moderan identitet, ali bez agresivnog odstupanja od neposrednog gradskog okruženja. Rezultat je objekat koji već na prvi pogled ostavlja utisak kvalitetne savremene gradnje.",
-          "Posebna pažnja posvećena je i zajedničkim komunikacijama unutar zgrade. Ulazni i hodnički prostori oblikovani su u modernom stilu, uz kombinovanje neutralnih tonova, tekstura kamena i detalja u izgledu drveta. Diskretna linearna rasveta dodatno naglašava arhitekturu prostora i doprinosi urednom i savremenom izgledu enterijera.",
-          "Takvi detalji možda ne predstavljaju najveći deo ukupne investicije, ali upravo oni svakodnevno utiču na prvi utisak stanara, vlasnika poslovnih prostora i njihovih gostiju.",
+          "Jednostavne i čiste linije daju zgradi savremen identitet koji se prirodno uklapa u urbano okruženje Podbare.",
+          "Ulazni, hodnički i drugi zajednički prostori oblikovani su tako da svakodnevno korišćenje objekta bude prijatno i funkcionalno.",
         ],
       },
       {
         title: "Gundulićeva 33 – život nadomak centra Novog Sada",
         paragraphs: [
-          "Lokacija predstavlja jednu od najvažnijih vrednosti svakog stambenog projekta.",
-          "Gundulićeva 33 nalazi se na Podbari, tradicionalnom novosadskom naselju koje je poslednjih godina prošlo kroz intenzivnu transformaciju. Stare porodične kuće i postojeća urbana struktura postepeno se dopunjuju savremenim stambenim objektima, dok blizina centra grada ostaje jedna od najvećih prednosti ovog dela Novog Sada.",
-          "Stanovanje na ovoj lokaciji omogućava jednostavan pristup različitim gradskim sadržajima, trgovinama, obrazovnim i poslovnim zonama, uslužnim delatnostima i glavnim saobraćajnim pravcima.",
-          "Upravo spoj dobre lokacije, moderne gradnje i rešenog pitanja parkiranja čini ovakve projekte posebno interesantnim za ljude koji žele da žive blizu centra, a da pritom ne odustanu od komfora koji pruža savremena novogradnja.",
-        ],
-      },
-      {
-        title: "Kvalitet objekta počinje od instalacija koje se ne vide",
-        paragraphs: [
-          "Kod završenog objekta najlakše je primetiti njegovu fasadu, ulaz, hodnike ili završne materijale. Međutim, veliki deo stvarnog kvaliteta jedne zgrade nalazi se iza zidova, plafona i završnih obloga.",
-          "Zbog toga izvođenje elektroinstalacija jake i slabe struje u stambeno-poslovnim objektima zahteva detaljno planiranje, preciznu koordinaciju sa ostalim izvođačima i doslednu realizaciju prema tehničkoj dokumentaciji.",
-          "Na objektu Gundulićeva 33 izvedeni su upravo takvi radovi, uključujući sve potrebne prateće aktivnosti koje omogućavaju da instalacioni sistemi funkcionišu kao jedna celina.",
-          "Za objekat sa 23 stana, poslovnim sadržajem, podzemnom garažom i zajedničkim prostorijama, kvalitetna elektroinfrastruktura predstavlja jedan od osnovnih preduslova za bezbedno i pouzdano korišćenje celog kompleksa.",
+          "Gundulićeva 33 nalazi se na Podbari, u neposrednoj blizini centra Novog Sada i glavnih saobraćajnih pravaca.",
+          "Lokacija omogućava jednostavan pristup trgovinama, obrazovnim ustanovama, poslovnim zonama i drugim svakodnevnim sadržajima.",
         ],
       },
       {
         title: "Uspešno realizovan projekat u Novom Sadu",
         paragraphs: [
-          "Završetak objekta Gundulićeva 33, Novi Sad predstavlja još jedan primer realizacije modernog stambeno-poslovnog projekta u kojem su arhitektura, funkcionalnost, instalaciona infrastruktura i potrebe budućih korisnika posmatrane kao delovi jedinstvene celine.",
-          "Sa 23 stana, poslovnim prostorom, podzemnom garažom, 23 parking mesta i 17 garažnih mesta, objekat odgovara zahtevima savremenog urbanog stanovanja.",
-          "Kompletno izvedene elektroinstalacije jake i slabe struje, zajedno sa svim pratećim radovima, predstavljaju važan deo tehničke infrastrukture objekta i osnovu za njegovo pouzdano funkcionisanje.",
-          "Gundulićeva 33 danas je završen i prepoznatljiv objekat na Podbari – savremena zgrada koja kvalitetom izvođenja, uređenim zajedničkim prostorima, funkcionalnošću i dobro rešenim parkingom pruža ono što se od moderne novogradnje u Novom Sadu i očekuje: sigurnost, praktičnost i kvalitetan prostor za život i poslovanje.",
+          "Završetkom objekta Gundulićeva 33 realizovan je stambeno-poslovni projekat koji objedinjuje funkcionalne stambene jedinice, poslovni prostor, pouzdanu infrastrukturu i rešeno parkiranje.",
+          "Danas je to prepoznatljiv objekat na Podbari, oblikovan za praktičan i udoban gradski život.",
         ],
       },
     ],

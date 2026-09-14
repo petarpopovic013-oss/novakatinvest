@@ -102,7 +102,7 @@ export function OfferIndex({ projects }: { projects: Project[] }) {
             <h1>Prostor za život, na pravoj adresi.</h1>
           </div>
           <p>
-            Istražite aktuelne Novak Invest projekte, dostupne strukture i
+            Istražite aktuelne Novak AT Invest projekte, dostupne strukture i
             detaljne prikaze stanova na jednom mestu.
           </p>
         </div>
@@ -156,7 +156,7 @@ export function OfferIndex({ projects }: { projects: Project[] }) {
       </section>
 
       <section className={styles.indexStatement}>
-        <span>Novak Invest · Novi Sad</span>
+        <span>Novak AT Invest · Novi Sad</span>
         <p>Jasan pregled ponude, od lokacije do konkretnog stana.</p>
       </section>
     </main>

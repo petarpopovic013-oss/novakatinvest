@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${reference.name} | Reference`,
     description: reference.summary,
     openGraph: {
-      title: `${reference.name} | Novak Invest`,
+      title: `${reference.name} | Novak AT Invest`,
       description: reference.summary,
       images: [reference.poster],
     },

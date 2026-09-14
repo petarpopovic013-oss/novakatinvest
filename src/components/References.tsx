@@ -54,7 +54,7 @@ export function ReferencesIndex() {
       </section>
 
       <section className={styles.indexStatement}>
-        <span>Novak Invest · Novi Sad</span>
+        <span>Novak AT Invest · Novi Sad</span>
         <p>Gradimo objekte koji ostaju relevantni i kada gradilište utihne.</p>
       </section>
     </main>

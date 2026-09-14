@@ -105,7 +105,7 @@ export function AboutPage() {
             <Image
               className={styles.pillarImage}
               src="/images/novak/temerinska-143/building-hero.webp"
-              alt="Temerinska 143 projekat Novak Invest u Novom Sadu"
+              alt="Temerinska 143 projekat Novak AT Invest u Novom Sadu"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
             />

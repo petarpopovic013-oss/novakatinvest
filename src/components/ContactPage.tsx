@@ -108,6 +108,12 @@ export function ContactPage() {
                     >
                       {contactChannels.sales.email}
                     </a>
+                    <a
+                      className={styles.detailValue}
+                      href={contactChannels.sales.additionalEmailHref}
+                    >
+                      {contactChannels.sales.additionalEmail}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -287,7 +293,7 @@ export function ContactPage() {
 
           <iframe
             className={styles.mapIframe}
-            title="Lokacija Novak Invest: Radnička 49, Novi Sad"
+            title="Lokacija Novak AT Invest: Radnička 49, Novi Sad"
             src={contactChannels.office.mapEmbedUrl}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -33,7 +33,7 @@ export function SiteHeader() {
         <Link
           className={styles.brand}
           href="/"
-          aria-label="Novak Invest — početna"
+          aria-label="Novak AT Invest — početna"
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -45,7 +45,7 @@ export function SiteHeader() {
             sizes="52px"
           />
           <span className={styles.brandName}>
-            Novak <span>Invest</span>
+            Novak <span>AT Invest</span>
           </span>
         </Link>
 

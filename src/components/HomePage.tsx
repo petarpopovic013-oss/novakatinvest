@@ -8,7 +8,9 @@ import {
   offerProjects,
   referenceProjects,
   siteSettings,
+  taliaHomeLocation,
 } from "../data/site";
+import type { HomeSalesLocation } from "../data/site";
 import { ArrowUpRightIcon } from "./icons";
 import styles from "./HomePage.module.css";
 
@@ -48,9 +50,29 @@ const heroSlideCopy: Record<string, HeroSlideCopy> = {
     description:
       "Kreiramo kvalitetne i promišljeno osmišljene domove, namenjene porodičnom životu, komforu i uživanju u mirnom okruženju.",
   },
+  "talia-residence": {
+    title: "Talia Residence",
+    description:
+      "Stambeno-poslovni objekat savremene arhitekture, osmišljen kao funkcionalno i prijatno okruženje za stanovanje i poslovanje. Projekat je u pripremi, a detalje objavljujemo uskoro.",
+  },
 };
 
-const heroSlides = offerProjects.slice(0, 3).map((project) => {
+const homeSalesLocations: HomeSalesLocation[] = [
+  ...offerProjects.map((project) => ({
+    id: project.id,
+    name: project.name,
+    statusLabel: project.statusLabel,
+    location: project.location,
+    shortDescription: project.shortDescription,
+    hero: project.hero,
+    listImage: project.hero,
+    facts: project.facts,
+    href: `/ponuda/${project.slug}`,
+  })),
+  taliaHomeLocation,
+];
+
+const heroSlides = homeSalesLocations.map((project) => {
   const copy = heroSlideCopy[project.id] ?? {
     title: (
       <>
@@ -66,6 +88,7 @@ const heroSlides = offerProjects.slice(0, 3).map((project) => {
     id: project.id,
     address: project.location.address,
     city: project.location.city,
+    statusLabel: project.statusLabel,
     src: project.hero.src,
     alt: project.hero.alt,
     title: copy.title,
@@ -164,6 +187,8 @@ export function HomePage() {
               <span>{currentSlide.address}</span>
               <span aria-hidden="true">/</span>
               <span>{currentSlide.city}</span>
+              <span aria-hidden="true">/</span>
+              <span>{currentSlide.statusLabel}</span>
             </div>
             <h1 id="home-heading">{currentSlide.title}</h1>
             <p className={styles.heroLead}>{currentSlide.description}</p>
@@ -173,7 +198,7 @@ export function HomePage() {
               Pogledajte ponudu <ArrowUpRightIcon />
             </Link>
             <Link className={styles.secondaryButton} href="/o-nama">
-              Upoznajte Novak Invest
+              Upoznajte Novak AT Invest
             </Link>
           </div>
           <div className={styles.heroHighlights} aria-label="O kompaniji">
@@ -203,7 +228,7 @@ export function HomePage() {
         <div className={styles.sectionHeader}>
           <div>
             <span className={styles.eyebrow}>Aktuelno</span>
-            <h2 id="offer-heading">Ponuda projekata</h2>
+            <h2 id="offer-heading">Aktuelne prodajne lokacije</h2>
           </div>
           <p>
             Istražite projekte za život u Novom Sadu i okolini i pronađite
@@ -212,52 +237,69 @@ export function HomePage() {
         </div>
 
         <div className={styles.projectList}>
-          {offerProjects.map((project, index) => (
-            <article
-              className={`${styles.projectCard} ${
-                index % 2 === 1 ? styles.projectCardReverse : ""
-              }`}
-              key={project.id}
-            >
-              <Link
-                className={styles.projectImageWrap}
-                href={`/ponuda/${project.slug}`}
-                aria-label={`Pogledajte projekat ${project.name}`}
+          {homeSalesLocations.map((project, index) => {
+            const projectImage = (
+              <Image
+                className={styles.projectImage}
+                src={project.listImage.src}
+                alt={project.listImage.alt}
+                fill
+                sizes="(max-width: 767px) calc(100vw - 36px), 62vw"
+              />
+            );
+
+            return (
+              <article
+                className={`${styles.projectCard} ${
+                  index % 2 === 1 ? styles.projectCardReverse : ""
+                }`}
+                key={project.id}
               >
-                <Image
-                  className={styles.projectImage}
-                  src={project.hero.src}
-                  alt={project.hero.alt}
-                  fill
-                  sizes="(max-width: 767px) calc(100vw - 36px), 62vw"
-                />
-              </Link>
+                {project.href ? (
+                  <Link
+                    className={styles.projectImageWrap}
+                    href={project.href}
+                    aria-label={`Pogledajte projekat ${project.name}`}
+                  >
+                    {projectImage}
+                  </Link>
+                ) : (
+                  <div
+                    className={`${styles.projectImageWrap} ${styles.projectImageWrapStatic}`}
+                  >
+                    {projectImage}
+                    <span className={styles.imageBadge}>{project.statusLabel}</span>
+                  </div>
+                )}
 
-              <div className={styles.projectBody}>
-                <h3>{project.name}</h3>
-                <p className={styles.location}>
-                  {project.location.address}, {project.location.city}
-                </p>
-                <p className={styles.description}>{project.shortDescription}</p>
+                <div className={styles.projectBody}>
+                  <div className={styles.statusLine}>{project.statusLabel}</div>
+                  <h3>{project.name}</h3>
+                  <p className={styles.location}>
+                    {project.location.address}, {project.location.city}
+                  </p>
+                  <p className={styles.description}>{project.shortDescription}</p>
 
-                <dl className={styles.facts}>
-                  {project.facts.slice(0, 3).map((fact) => (
-                    <div key={fact.label}>
-                      <dt>{fact.label}</dt>
-                      <dd>{fact.value}</dd>
-                    </div>
-                  ))}
-                </dl>
+                  <dl className={styles.facts}>
+                    {project.facts.slice(0, 3).map((fact) => (
+                      <div key={fact.label}>
+                        <dt>{fact.label}</dt>
+                        <dd>{fact.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
 
-                <Link
-                  className={styles.textLink}
-                  href={`/ponuda/${project.slug}`}
-                >
-                  Pogledajte projekat <ArrowUpRightIcon />
-                </Link>
-              </div>
-            </article>
-          ))}
+                  {project.href ? (
+                    <Link className={styles.textLink} href={project.href}>
+                      Pogledajte projekat <ArrowUpRightIcon />
+                    </Link>
+                  ) : (
+                    <span className={styles.upcomingLabel}>Detalji uskoro</span>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -269,7 +311,7 @@ export function HomePage() {
         </div>
 
         <div className={styles.whyContent}>
-          <span className={styles.eyebrow}>Zašto Novak Invest</span>
+          <span className={styles.eyebrow}>Zašto Novak AT Invest</span>
           <h2 id="why-heading">Dom po meri svakodnevnog života.</h2>
           <p className={styles.whyLead}>
             Gradimo sa dugoročnom perspektivom: od izbora lokacije i
@@ -309,7 +351,7 @@ export function HomePage() {
                 <Image
                   className={styles.standardImage}
                   src={standard.image}
-                  alt={`${standard.title} u projektima Novak Invest`}
+                  alt={`${standard.title} u projektima Novak AT Invest`}
                   fill
                   sizes="(max-width: 767px) calc(100vw - 36px), 25vw"
                 />
