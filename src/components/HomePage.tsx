@@ -5,10 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
+  contactChannels,
+  miselukHomeLocation,
   offerProjects,
   referenceProjects,
   siteSettings,
   taliaHomeLocation,
+  temerinska142HomeLocation,
 } from "../data/site";
 import type { HomeSalesLocation } from "../data/site";
 import { ArrowUpRightIcon } from "./icons";
@@ -55,6 +58,16 @@ const heroSlideCopy: Record<string, HeroSlideCopy> = {
     description:
       "Stambeno-poslovni objekat savremene arhitekture, osmišljen kao funkcionalno i prijatno okruženje za stanovanje i poslovanje. Projekat je u pripremi, a detalje objavljujemo uskoro.",
   },
+  "temerinska-142": {
+    title: "Temerinska 142",
+    description:
+      "Savremeni stambeno-poslovni objekat na atraktivnoj gradskoj lokaciji, osmišljen sa fokusom na energetsku efikasnost, komfor i funkcionalan raspored prostorija. Detalje objavljujemo uskoro.",
+  },
+  "miseluk": {
+    title: "Stambeno-poslovni kompleks Mišeluk",
+    description:
+      "Ekskluzivan stambeno-poslovni kompleks na jednoj od najpoželjnijih lokacija sa pogledom na grad, projektovan sa naglaskom na prirodno okruženje, privatnost i vrhunski kvalitet gradnje. Detalji uskoro.",
+  },
 };
 
 const homeSalesLocations: HomeSalesLocation[] = [
@@ -70,6 +83,8 @@ const homeSalesLocations: HomeSalesLocation[] = [
     href: `/ponuda/${project.slug}`,
   })),
   taliaHomeLocation,
+  temerinska142HomeLocation,
+  miselukHomeLocation,
 ];
 
 const heroSlides = homeSalesLocations.map((project) => {
@@ -305,6 +320,14 @@ export function HomePage() {
 
       <section className={`${styles.section} ${styles.why}`} aria-labelledby="why-heading">
         <div className={styles.experience}>
+          <Image
+            className={styles.experienceBg}
+            src="/images/Tamni pravougaonik.png"
+            alt=""
+            fill
+            sizes="(max-width: 767px) calc(100vw - 36px), 480px"
+          />
+          <div className={styles.experienceShade} aria-hidden="true" />
           <span>Iskustvo vlasnika u građevinarstvu</span>
           <strong>15+</strong>
           <p>godina posvećenih razvoju i izgradnji prostora za život</p>
@@ -434,10 +457,15 @@ export function HomePage() {
             <span>Telefon</span>
             <strong>{siteSettings.phone}</strong>
           </a>
-          <a href={`mailto:${siteSettings.email}`}>
+          <div className={styles.contactItem}>
             <span>Email</span>
-            <strong>{siteSettings.email}</strong>
-          </a>
+            <a href={contactChannels.sales.emailHref}>
+              <strong>{contactChannels.sales.email}</strong>
+            </a>
+            <a href={contactChannels.sales.additionalEmailHref}>
+              <strong>{contactChannels.sales.additionalEmail}</strong>
+            </a>
+          </div>
           <Link className={styles.lightButton} href="/kontakt">
             Kontaktirajte prodaju <ArrowUpRightIcon />
           </Link>

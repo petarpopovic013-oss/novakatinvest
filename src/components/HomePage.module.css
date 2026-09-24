@@ -448,13 +448,41 @@
 }
 
 .experience {
+  position: relative;
   display: flex;
   min-height: 560px;
   padding: clamp(28px, 4vw, 56px);
   flex-direction: column;
   border-radius: var(--radius);
+  overflow: hidden;
   background: var(--charcoal);
   color: var(--white);
+}
+
+.experienceBg {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.experienceShade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.42) 0%,
+    rgba(20, 20, 20, 0.25) 45%,
+    rgba(20, 20, 20, 0.72) 100%
+  );
+  pointer-events: none;
+}
+
+.experience > span,
+.experience strong,
+.experience p {
+  position: relative;
+  z-index: 2;
 }
 
 .experience > span {
@@ -683,7 +711,8 @@
   justify-content: flex-end;
 }
 
-.contactDetails > a:not(.lightButton) {
+.contactDetails > a:not(.lightButton),
+.contactItem {
   display: flex;
   min-height: 70px;
   padding: 14px 0;
@@ -692,8 +721,35 @@
   border-bottom: 1px solid var(--line);
 }
 
+.contactDetails > a:not(.lightButton) {
+  transition: opacity 180ms ease;
+}
+
+.contactDetails > a:not(.lightButton):hover,
+.contactDetails > a:not(.lightButton):focus-visible {
+  opacity: 0.7;
+}
+
 .contactDetails > a:first-child {
   border-top: 1px solid var(--line);
+}
+
+.contactItem strong {
+  display: block;
+}
+
+.contactItem a {
+  color: inherit;
+  transition: opacity 180ms ease;
+}
+
+.contactItem a + a {
+  margin-top: 6px;
+}
+
+.contactItem a:hover,
+.contactItem a:focus-visible {
+  opacity: 0.7;
 }
 
 .contactDetails span {

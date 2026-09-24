@@ -1,6 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 
 import { DemoPage, demoStyles as styles } from "../src/components/DemoRoutes";
+
+export const metadata: Metadata = {
+  title: "Stranica nije pronađena",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

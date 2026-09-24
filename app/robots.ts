@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://novakinvest.rs/sitemap.xml",
-    host: "https://novakinvest.rs",
+    host: "novakinvest.rs",
   };
 }

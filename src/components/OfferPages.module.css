@@ -692,28 +692,30 @@
 
 .salesCta {
   display: grid;
-  margin: clamp(80px, 10vw, 150px) 8px 8px;
+  margin: clamp(80px, 10vw, 150px) 8px 16px;
   padding: clamp(46px, 7vw, 96px);
   grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.55fr);
   gap: clamp(50px, 9vw, 140px);
   align-items: end;
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--charcoal);
-  color: white;
+  background: var(--white);
+  color: var(--foreground);
 }
 
 .salesCta .sectionEyebrow {
-  color: #a9a9a3;
+  color: var(--muted);
 }
 
 .salesCta h2 {
   max-width: 850px;
+  color: var(--foreground);
 }
 
 .salesCta p {
   max-width: 620px;
   margin: 28px 0 0;
-  color: #b7b7b0;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -731,33 +733,38 @@
   align-items: center;
   justify-content: center;
   gap: 18px;
-  border: 1px solid currentColor;
   border-radius: 3px;
   font-size: 13px;
   transition:
     background-color 180ms ease,
-    color 180ms ease;
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
 .primaryButton {
-  background: white;
-  color: var(--foreground);
+  border: 1px solid var(--charcoal);
+  background: var(--charcoal);
+  color: white;
 }
 
 .secondaryButton {
-  color: currentColor;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--foreground);
 }
 
 .salesCta .primaryButton:hover,
 .salesCta .primaryButton:focus-visible {
   background: transparent;
-  color: white;
+  color: var(--foreground);
+  border-color: var(--charcoal);
 }
 
 .salesCta .secondaryButton:hover,
 .salesCta .secondaryButton:focus-visible {
-  background: white;
-  color: var(--foreground);
+  background: var(--charcoal);
+  color: white;
+  border-color: var(--charcoal);
 }
 
 .unitHero {

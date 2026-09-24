@@ -33,7 +33,7 @@ export function ReferencesIndex() {
               <Image
                 className={styles.cardImage}
                 src={reference.poster}
-                alt=""
+                alt={`${reference.name} — završeni projekat Novak AT Invest`}
                 fill
                 preload={index === 0}
                 sizes="(max-width: 760px) calc(100vw - 28px), 50vw"

@@ -106,6 +106,58 @@ export const taliaHomeLocation: HomeSalesLocation = {
   href: null,
 };
 
+export const temerinska142HomeLocation: HomeSalesLocation = {
+  id: "temerinska-142",
+  name: "Temerinska 142",
+  statusLabel: "Projekat u pripremi",
+  location: {
+    address: "Temerinska 142",
+    city: "Novi Sad",
+  },
+  shortDescription:
+    "Savremeni stambeno-poslovni objekat na atraktivnoj gradskoj lokaciji, osmišljen sa fokusom na energetsku efikasnost, komfor i funkcionalan raspored prostorija. Detalje objavljujemo uskoro.",
+  hero: {
+    src: "/images/novak/temerinska-142.webp",
+    alt: "Prikaz lokacije i projekta Temerinska 142 u Novom Sadu",
+  },
+  listImage: {
+    src: "/images/novak/temerinska-142.webp",
+    alt: "Prikaz lokacije i projekta Temerinska 142 u Novom Sadu",
+  },
+  facts: [
+    { label: "Namena", value: "Stambeno-poslovni objekat" },
+    { label: "Status", value: "U pripremi" },
+    { label: "Detalji", value: "Uskoro" },
+  ],
+  href: null,
+};
+
+export const miselukHomeLocation: HomeSalesLocation = {
+  id: "miseluk",
+  name: "Stambeno-poslovni kompleks Mišeluk",
+  statusLabel: "Projekat u pripremi",
+  location: {
+    address: "Mišeluk",
+    city: "Novi Sad",
+  },
+  shortDescription:
+    "Ekskluzivan stambeno-poslovni kompleks na jednoj od najpoželjnijih lokacija sa pogledom na grad, projektovan sa naglaskom na prirodno okruženje, privatnost i vrhunski kvalitet gradnje. Detalji uskoro.",
+  hero: {
+    src: "/images/novak/miseluk.webp",
+    alt: "Prikaz lokacije stambeno-poslovnog kompleksa Mišeluk",
+  },
+  listImage: {
+    src: "/images/novak/miseluk.webp",
+    alt: "Prikaz lokacije stambeno-poslovnog kompleksa Mišeluk",
+  },
+  facts: [
+    { label: "Namena", value: "Stambeno-poslovni kompleks" },
+    { label: "Status", value: "U pripremi" },
+    { label: "Detalji", value: "Uskoro" },
+  ],
+  href: null,
+};
+
 export const projects: Project[] = [
   {
     id: "temerinska-143",
